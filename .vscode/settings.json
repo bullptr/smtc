@@ -1,0 +1,10 @@
+{
+    "antlr4.generation": {
+        "package": "smtx_parser",
+        "outputDir": ".",
+        "mode": "external",
+        "language": "Go",
+        "listeners": true,
+        "visitors": false
+    }
+}
