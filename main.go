@@ -5,10 +5,8 @@ import (
 
 	arg "github.com/alexflint/go-arg"
 
-	// "github.com/smtx/compiler"
 	"github.com/smtx/config"
-	"github.com/smtx/parser"
-	smtx "github.com/smtx/smtx_parser"
+	p "github.com/smtx/parser"
 )
 
 var args config.CmdArgs
@@ -24,9 +22,14 @@ func main() {
 		}
 
 		for _, file := range args.Check.Files {
-			smtx.ParseFile(file)
-			// tree := parser.Start_()
-			// println(tree.ToStringTree(nil, parser))
+			lexer, parser := p.ParseFile(file)
+			tree := parser.Script()
+
+			if args.Graph {
+				p.VisualizeParseTree(parser, tree, file)
+			}
+
+			lexer.Reset()
 		}
 
 		// compiler.NewCompilerFromArgs(args)
@@ -34,6 +37,5 @@ func main() {
 
 	default:
 		// argParser.WriteUsage(os.Stderr)
-		parser.TestBindings()
 	}
 }

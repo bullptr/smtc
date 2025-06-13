@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	ts "github.com/smtx/parser"
-	ap "github.com/smtx/smtx_parser"
+	// ap "github.com/smtx/smtx_parser"
 )
 
 // func BenchmarkTypeChecking(b *testing.B) {
@@ -40,13 +40,13 @@ func BenchmarkParsers(b *testing.B) {
 		}
 	})
 
-	b.Run("Antlr Small", func(b *testing.B) {
-		b.ReportAllocs()
+	// b.Run("Antlr Small", func(b *testing.B) {
+	// 	b.ReportAllocs()
 
-		for b.Loop() {
-			ap.ParseFile(smallTest)
-		}
-	})
+	// 	for b.Loop() {
+	// 		ap.ParseFile(smallTest)
+	// 	}
+	// })
 
 	b.Run("TreeSitter Large", func(b *testing.B) {
 		b.ReportAllocs()
@@ -56,13 +56,13 @@ func BenchmarkParsers(b *testing.B) {
 		}
 	})
 
-	b.Run("Antlr Large", func(b *testing.B) {
-		b.ReportAllocs()
+	// b.Run("Antlr Large", func(b *testing.B) {
+	// 	b.ReportAllocs()
 
-		for b.Loop() {
-			ap.ParseFile(largeTest)
-		}
-	})
+	// 	for b.Loop() {
+	// 		ap.ParseFile(largeTest)
+	// 	}
+	// })
 
 	// b.Run("Participle", func(b *testing.B) {
 	// 	parser := p.NewParticipleParser

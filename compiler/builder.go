@@ -9,7 +9,6 @@ import (
 	ts "github.com/tree-sitter/go-tree-sitter"
 
 	"github.com/smtx/ast"
-	"github.com/smtx/parser"
 	"github.com/smtx/utils"
 )
 
@@ -18,8 +17,8 @@ import (
 func BuildSourceFile(filename string) *ast.SourceFile {
 	src := utils.ReadFileBytes(filename)
 	sf := &ast.SourceFile{
-		Src:    src,
-		Parser: parser.NewParser(src),
+		Src: src,
+		// Parser: parser.NewParser(src),
 	}
 	return sf
 }

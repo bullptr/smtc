@@ -1,4 +1,4 @@
-package smtx_parser
+package parser
 
 import (
 	"fmt"

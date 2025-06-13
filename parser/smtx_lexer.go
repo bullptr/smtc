@@ -1,6 +1,6 @@
-// Code generated from /home/baeyun/smtx/smtx_parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from /home/baeyun/smtc/parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package smtx_parser
+package parser
 
 import (
 	"fmt"

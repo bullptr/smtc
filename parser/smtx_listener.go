@@ -1,6 +1,6 @@
-// Code generated from /home/baeyun/smtx/smtx_parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from /home/baeyun/smtc/parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package smtx_parser // SMTX
+package parser // SMTX
 import "github.com/antlr4-go/antlr/v4"
 
 // SMTXListener is a complete listener for a parse tree produced by SMTXParser.

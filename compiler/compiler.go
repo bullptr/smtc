@@ -8,11 +8,8 @@ import (
 
 	gast "go/ast"
 
-	ts "github.com/tree-sitter/go-tree-sitter"
-
 	"github.com/smtx/ast"
 	"github.com/smtx/config"
-	"github.com/smtx/parser"
 	"github.com/smtx/types"
 	"github.com/smtx/utils"
 )
@@ -97,9 +94,9 @@ func (c *Compiler) CompileSourceFile(filename string) {
 		Name: "main",
 	}
 	sf := &ast.SourceFile{
-		Src:    src,
-		Fset:   c.Fset,
-		Parser: parser.NewParser(src),
+		Src:  src,
+		Fset: c.Fset,
+		// Parser: parser.NewParser(src),
 		Ast: &ast.File{
 			Name:  &pkg,
 			Scope: gast.NewScope(nil),
@@ -109,19 +106,19 @@ func (c *Compiler) CompileSourceFile(filename string) {
 	sf.Ast.FileEnd = token.Pos(len(src))
 
 	// scan for parser errors
-	parser.WalkParser(sf.Parser.RootNode(), func(node *ts.Node) {
-		if node.IsError() && !node.IsExtra() {
-			start, _ := node.ByteRange()
-			tsPos := node.StartPosition()
-			pos := token.Position{
-				Filename: filename,
-				Offset:   int(start),
-				Line:     int(tsPos.Row) + 1,
-				Column:   int(tsPos.Column) + 1,
-			}
-			print(FormatError(&sf.Src, &pos, node.ToSexp()))
-		}
-	})
+	// parser.WalkParser(sf.Parser.RootNode(), func(node *ts.Node) {
+	// 	if node.IsError() && !node.IsExtra() {
+	// 		start, _ := node.ByteRange()
+	// 		tsPos := node.StartPosition()
+	// 		pos := token.Position{
+	// 			Filename: filename,
+	// 			Offset:   int(start),
+	// 			Line:     int(tsPos.Row) + 1,
+	// 			Column:   int(tsPos.Column) + 1,
+	// 		}
+	// 		print(FormatError(&sf.Src, &pos, node.ToSexp()))
+	// 	}
+	// })
 
 	cmds := BuildCommands(&sf.Src, sf.Parser.RootNode())
 	mainFunc := BuildMainFunction(&cmds)

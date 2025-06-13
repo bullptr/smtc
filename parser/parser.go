@@ -1,18 +1,28 @@
 package parser
 
-/*
-#cgo CFLAGS: -I${SRCDIR}/target/debug
-#cgo LDFLAGS: -L${SRCDIR}/target/debug -lsmtx_parser
+import (
+	"fmt"
+	"os"
 
-#include <./bindings.h>
-*/
-import "C"
+	"github.com/antlr4-go/antlr/v4"
+)
 
-func TestBindings() {
-	C.get_buffer()
-	// buffer := unsafe.Slice((*byte)(bufResult.ptr), bufResult.len)
-	// // bad idea for large buffer performance
-	// // bufferCopy := C.GoBytes(unsafe.Pointer(fbr.ptr), C.int(fbr.len))
+func ParseFile(filePath string) (*SMTXLexer, *SMTXParser) {
+	input, _ := antlr.NewFileStream(filePath)
+	lexer := NewSMTXLexer(input)
+	stream := antlr.NewCommonTokenStream(lexer, 0)
+	parser := NewSMTXParser(stream)
+	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 
-	// // fmt.Printf("Flexbuffer data: %v\n", flexBuf)
+	return lexer, parser
+}
+
+func VisualizeParseTree(parser *SMTXParser, tree IScriptContext, filePath string) {
+	visualizer := NewGraphvizVisitor(parser.GetRuleNames(), parser.GetTokenNames())
+	visualizer.Visit(tree)
+
+	err := os.WriteFile(filePath+".dot", []byte(visualizer.GetDOT()), 0644)
+	if err != nil {
+		fmt.Printf("Error writing DOT file: %v\n", err)
+	}
 }

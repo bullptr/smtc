@@ -1,6 +1,6 @@
 # Benchmarks
 
-The following benchmark results compare the performance of [TreeSitter](https://tree-sitter.github.io/tree-sitter/) and [Participle](https://github.com/alecthomas/participle) parser implementations.
+The following benchmark results compare the performance of [TreeSitter](https://tree-sitter.github.io/tree-sitter/) and [Antlr4](https://github.com/antlr4-go/antlr) SMTX parser implementations.
 
 Environment:
 
@@ -14,40 +14,61 @@ cpu: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx
 To run the benchmarks, use:
 
 ```bash
-go test ./benchmarks -bench=.
+make bench
 ```
 
-Results from running the benchmark on a sample TOML input file:
+## Performance Analysis: TreeSitter vs Antlr
+
+Based on the benchmark results, TreeSitter generally performs better than Antlr across both small and large inputs. Here's a detailed breakdown:
+
+### Results
 
 | Parser Implementation | Operations/sec | Average Time | Memory | Allocations |
-| --- | --- | --- | --- | --- |
-| TreeSitter | 2654 | 387825 ns/op | 2684 B/op | 22 allocs/op |
-| Participle | 1845 | 595238 ns/op | 146712 B/op | 1765 allocs/op |
+| --------------------- | -------------- | ------------ | ------ | ----------- |
+| TreeSitter (Small)    | 13,664         | 86.4μs       | 1.1KB  | 11          |
+| Antlr (Small)         | 12,742         | 96.2μs       | 18.9KB | 206         |
+| TreeSitter (Large)    | 85             | 13.5ms       | 55KB   | 11          |
+| Antlr (Large)         | 81             | 14.3ms       | 3.2MB  | 40,446      |
 
-Analysis of the benchmark results reveals significant performance differences between the TreeSitter and Participle parser implementations:
+### Small Input Performance
 
-## Processing Speed
+- **Execution Speed:** TreeSitter is about 10% faster (86,426 ns/op vs 96,222 ns/op)
+- **Memory Usage:** TreeSitter uses significantly less memory (1,088 B/op vs 18,900 B/op)
+- **Allocation Efficiency:** TreeSitter makes fewer allocations (11 vs 206 allocs/op)
 
-TreeSitter demonstrates superior performance with 2,654 operations per second compared to Participle's 1,845 operations per second. This represents approximately a 44% higher throughput for TreeSitter.
+### Large Input Performance
 
-## Latency
+- **Execution Speed:** TreeSitter is about 5.6% faster (13.5ms vs 14.3ms)
+- **Memory Usage:** TreeSitter is vastly more memory-efficient (55KB vs 3.2MB)
+- **Allocation Efficiency:** TreeSitter maintains consistent allocations (11 vs 40,446 allocs/op)
 
-TreeSitter processes each operation in 387,825 nanoseconds on average, while Participle requires 595,238 nanoseconds. This indicates that TreeSitter is about 35% faster in terms of processing time per operation.
+### Conclusion
 
-## Memory Efficiency
+TreeSitter is the better performer overall, showing:
 
-TreeSitter shows remarkable memory efficiency:
+- Better speed performance in both small and large inputs
+- Significantly lower memory consumption
+- More consistent and efficient memory allocation patterns
+- Better scalability with larger inputs
 
-- Memory Usage: TreeSitter uses only 2,684 bytes per operation compared to Participle's 146,712 bytes - a 98% reduction in memory consumption
-- Memory Allocations: TreeSitter makes just 22 allocations per operation versus Participle's 1,765 allocations - a 99% reduction in allocation count
+The most striking advantage is TreeSitter's memory efficiency, particularly with large inputs where it uses only 1.7% of the memory that Antlr requires.
 
-## Overall Assessment
+### Raw Output
 
-TreeSitter clearly outperforms Participle across all measured metrics:
-
-- Higher throughput (better operations/second)
-- Lower latency (faster processing time)
-- Significantly lower memory footprint
-- More efficient memory allocation patterns
-
-These results suggest that TreeSitter would be the preferred choice for production environments where performance and resource utilization are critical factors.
+```bash
+goos: linux
+goarch: amd64
+pkg: github.com/smtx/benchmarks
+cpu: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  
+BenchmarkParsers
+BenchmarkParsers/TreeSitter_Small
+BenchmarkParsers/TreeSitter_Small-8                13664             86426 ns/op            1088 B/op         11 allocs/op
+BenchmarkParsers/Antlr_Small
+BenchmarkParsers/Antlr_Small-8                     12742             96222 ns/op           18900 B/op        206 allocs/op
+BenchmarkParsers/TreeSitter_Large
+BenchmarkParsers/TreeSitter_Large-8                   85          13539014 ns/op           55008 B/op         11 allocs/op
+BenchmarkParsers/Antlr_Large
+BenchmarkParsers/Antlr_Large-8                        81          14341820 ns/op         3245091 B/op      40446 allocs/op
+PASS
+ok      github.com/smtx/benchmarks      4.781s
+```

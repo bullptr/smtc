@@ -6,7 +6,7 @@ build:
 	@clear
 	@go build
 
-qtest:
+test-001:
 	@clear
 	@go run . check ./tests/test-001.smt2
 
