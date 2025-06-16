@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Mahamed"
+  given-names: "Bukhaar Ali Mahamud"
+  orcid: "https://orcid.org/0009-0005-2478-4457"
+title: "SMTC: SMT-LIB Type Checking Framework"
+version: 0.1.0
+date-released: 2025-06-16
+repository-code: "https://github.com/bukharii/smtc"
+license: MIT
+abstract: >-
+  SMT solvers serve as essential tools for analyzing constraints in practical
+  applications such as program synthesis and symbolic execution. Proper SMT
+  validation through type checking helps ensure the correctness and reliability
+  of these analysis tools. Existing approaches typically embed type validation
+  rules within specific solvers or tools, which requires nontrivial development
+  efforts. We present a novel framework that leverages SMT-LIB itself as a type
+  definition language. Our approach reformulates the traditional model of SMT
+  type validation by treating SMT-LIB specifications as type definition files,
+  enabling a flexible and maintainable type validation system. We demonstrate
+  this through SMT Compiler (SMTC), a standalone preprocessor that combines
+  concurrent processing with Go's type system.
+keywords:
+  - SMT solvers
+  - type checking
+  - SMT-LIB
+  - verification
+  - formal methods
+references:
+  - type: conference-paper
+    title: "SMT-LIB as a Type Definition Language: A Self-Extensible Type Checking Framework"
+    authors:
+      - family-names: "Mahamed"
+        given-names: "Bukhaar Ali Mahamud"
+    conference:
+      name: "The 31st International Conference on Principles and Practice of Constraint Programming"
+      year: 2025
+    status: unpublished
