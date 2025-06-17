@@ -10,6 +10,7 @@ import (
 
 	"github.com/smtx/ast"
 	"github.com/smtx/config"
+	"github.com/smtx/parser"
 	"github.com/smtx/types"
 	"github.com/smtx/utils"
 )
@@ -59,7 +60,6 @@ func NewCompiler() *Compiler {
 }
 
 func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
-	filenames := utils.GetFilesToCheck(args.Check.Files)
 	c := &Compiler{
 		Config: &Config{
 			Include: []string{},
@@ -70,8 +70,26 @@ func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
 		},
 		Fset: token.NewFileSet(),
 	}
+	// filenames := utils.GetFilesToCheck(args.Check.Files)
 
-	c.CompileScripts(filenames)
+	// c.CompileScripts(filenames)
+
+	for _, filename := range args.Check.Files {
+		p := parser.NewParser(filename)
+
+		if args.Graph {
+			parser.VisualizeParserGraph(p, filename)
+		}
+
+		BuildFileSet(c.Fset, p, filename)
+		p.ResetLexer()
+	}
+
+	c.Fset.Iterate(func(f *token.File) bool {
+		fmt.Printf("%v\n", f)
+
+		return true // continue iterating
+	})
 
 	if args.Verbose {
 		fmt.Printf("Files: %d\n", len(c.Files))
@@ -105,22 +123,8 @@ func (c *Compiler) CompileSourceFile(filename string) {
 	sf.Ast.FileStart = token.Pos(0)
 	sf.Ast.FileEnd = token.Pos(len(src))
 
-	// scan for parser errors
-	// parser.WalkParser(sf.Parser.RootNode(), func(node *ts.Node) {
-	// 	if node.IsError() && !node.IsExtra() {
-	// 		start, _ := node.ByteRange()
-	// 		tsPos := node.StartPosition()
-	// 		pos := token.Position{
-	// 			Filename: filename,
-	// 			Offset:   int(start),
-	// 			Line:     int(tsPos.Row) + 1,
-	// 			Column:   int(tsPos.Column) + 1,
-	// 		}
-	// 		print(FormatError(&sf.Src, &pos, node.ToSexp()))
-	// 	}
-	// })
-
-	cmds := BuildCommands(&sf.Src, sf.Parser.RootNode())
+	// cmds := BuildCommands(&sf.Src, sf.Parser.RootNode())
+	cmds := []gast.Stmt{}
 	mainFunc := BuildMainFunction(&cmds)
 	// sf.Ast.Decls = append(sf.Ast.Decls, topLevelDelcs...)
 	sf.Ast.Decls = append(sf.Ast.Decls, mainFunc)

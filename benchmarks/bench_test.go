@@ -2,8 +2,6 @@ package benchmarks
 
 import (
 	"testing"
-
-	ts "github.com/smtx/parser"
 	// ap "github.com/smtx/smtx_parser"
 )
 
@@ -29,16 +27,16 @@ import (
 // }
 
 func BenchmarkParsers(b *testing.B) {
-	smallTest := "../tests/test-002.smt2"
-	largeTest := "../tests/_large.smt2"
+	// smallTest := "../tests/test-002.smt2"
+	// largeTest := "../tests/_large.smt2"
 
-	b.Run("TreeSitter Small", func(b *testing.B) {
-		b.ReportAllocs()
+	// b.Run("TreeSitter Small", func(b *testing.B) {
+	// 	b.ReportAllocs()
 
-		for b.Loop() {
-			ts.ParseFile(smallTest)
-		}
-	})
+	// 	for b.Loop() {
+	// 		ts.ParseFile(smallTest)
+	// 	}
+	// })
 
 	// b.Run("Antlr Small", func(b *testing.B) {
 	// 	b.ReportAllocs()
@@ -48,13 +46,13 @@ func BenchmarkParsers(b *testing.B) {
 	// 	}
 	// })
 
-	b.Run("TreeSitter Large", func(b *testing.B) {
-		b.ReportAllocs()
+	// b.Run("TreeSitter Large", func(b *testing.B) {
+	// 	b.ReportAllocs()
 
-		for b.Loop() {
-			ts.ParseFile(largeTest)
-		}
-	})
+	// 	for b.Loop() {
+	// 		ts.ParseFile(largeTest)
+	// 	}
+	// })
 
 	// b.Run("Antlr Large", func(b *testing.B) {
 	// 	b.ReportAllocs()

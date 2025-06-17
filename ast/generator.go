@@ -44,18 +44,20 @@ func PrintSourceFile(sf *SourceFile) {
 	fmt.Println(Generate(sf))
 }
 
+// @TODO: update this to use the new parser
 func PrintParser(sf *SourceFile) {
 	if sf.Parser == nil {
 		panic("Parser is nil")
 	}
-	println(sf.Parser.RootNode().ToSexp())
+	// println(sf.Parser.RootNode().ToSexp())
 }
 
+// @TODO: update this to use the new parser
 func PrettyPrintParser(sf *SourceFile) {
 	if sf.Parser == nil {
 		panic("Parser is nil")
 	}
 
-	out := utils.PrettySExp(sf.Parser.RootNode().ToSexp())
-	println(out)
+	// out := utils.PrettySExp(sf.Parser.RootNode().ToSexp())
+	// println(out)
 }

@@ -6,13 +6,38 @@ import (
 	"go/token"
 	"os"
 
+	"github.com/antlr4-go/antlr/v4"
 	ts "github.com/tree-sitter/go-tree-sitter"
 
 	"github.com/smtx/ast"
+	"github.com/smtx/parser"
 	"github.com/smtx/utils"
 )
 
 // @TODO: use: https://pkg.go.dev/golang.org/x/tools/go/ast/astutil
+
+func BuildFileSet(fset *token.FileSet, parser *parser.Parser, filename string) {
+	file := fset.AddFile(filename, -1, parser.Tree.GetTokenStream().Size())
+
+	// Process all tokens from ANTLR
+	stream := parser.Tree.GetTokenStream()
+	for i := 0; i < stream.Size(); i++ {
+		token := stream.Get(i)
+		if token.GetChannel() == antlr.TokenDefaultChannel {
+			pos := file.Pos(token.GetStart())
+			end := file.Pos(token.GetStop() + 1)
+
+			// Create token positions
+			file.AddLine(int(pos))
+
+			// Check for newline in token text instead of specific token type
+			if text := token.GetText(); text == "\n" || text == "\r\n" {
+				// if token.GetTokenType() == parser.NEWLINE {
+				file.AddLine(int(end))
+			}
+		}
+	}
+}
 
 func BuildSourceFile(filename string) *ast.SourceFile {
 	src := utils.ReadFileBytes(filename)
