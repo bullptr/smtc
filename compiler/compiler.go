@@ -72,24 +72,21 @@ func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
 	}
 	// filenames := utils.GetFilesToCheck(args.Check.Files)
 
-	// c.CompileScripts(filenames)
-
 	for _, filename := range args.Check.Files {
-		p := parser.NewParser(filename)
+		c.CompileSourceFile(filename)
 
-		if args.Graph {
-			parser.VisualizeParserGraph(p, filename)
-		}
-
-		BuildFileSet(c.Fset, p, filename)
-		p.ResetLexer()
 	}
 
-	c.Fset.Iterate(func(f *token.File) bool {
-		fmt.Printf("%v\n", f)
+	if args.Graph {
+		for _, sf := range c.Files {
+			parser.VisualizeParserGraph(sf.Parser, sf.Filename)
+		}
+	}
 
-		return true // continue iterating
-	})
+	// c.Fset.Iterate(func(f *token.File) bool {
+	// 	fmt.Printf("%v\n", f)
+	// 	return true // continue iterating
+	// })
 
 	if args.Verbose {
 		fmt.Printf("Files: %d\n", len(c.Files))
@@ -98,30 +95,18 @@ func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
 	return c
 }
 
-func (c *Compiler) CompileScripts(filepaths []*string) {
-	// @TODO: run in parallel
-	for _, f := range filepaths {
-		c.CompileSourceFile(*f)
-	}
-}
-
 func (c *Compiler) CompileSourceFile(filename string) {
-	src := utils.ReadFileBytes(filename)
-	c.Fset.AddFile(filename, -1, len(src))
 	pkg := ast.Ident{
 		Name: "main",
 	}
 	sf := &ast.SourceFile{
-		Src:  src,
-		Fset: c.Fset,
-		// Parser: parser.NewParser(src),
+		Filename: filename,
+		Parser:   parser.NewParser(c.Fset, filename),
 		Ast: &ast.File{
 			Name:  &pkg,
 			Scope: gast.NewScope(nil),
 		},
 	}
-	sf.Ast.FileStart = token.Pos(0)
-	sf.Ast.FileEnd = token.Pos(len(src))
 
 	// cmds := BuildCommands(&sf.Src, sf.Parser.RootNode())
 	cmds := []gast.Stmt{}
@@ -131,19 +116,16 @@ func (c *Compiler) CompileSourceFile(filename string) {
 
 	// ast.PrintAst(sf.Ast)
 	// ast.PrintSourceFile(sf)
-	// ast.PrettyPrintParser(sf)
-	// c.Files = append(c.Files, sf)
+	sf.Parser.ResetLexer()
+	c.Files = append(c.Files, sf)
 	// c.CheckTypes()
-
-	// @TODO: !important: prevent leaks
-	// defer sf.Parser.Close()
 }
 
 // @TODO: check for types for all
 func (c *Compiler) CheckTypes() {
 	utils.PrintSectionHeader("Check Types")
 	for _, sf := range c.Files {
-		_, err := types.CheckSourceFile(sf)
+		_, err := types.CheckSourceFile(c.Fset, sf)
 		if err != nil {
 			log.Fatal(err)
 			os.Exit(0)

@@ -2,17 +2,15 @@ package ast
 
 import (
 	"go/ast"
-	"go/token"
 
 	"github.com/smtx/parser"
 )
 
 type SourceFile struct {
-	Src []byte
-	// reference to Compiler.Fset
-	Fset   *token.FileSet
-	Ast    *ast.File
-	Parser *parser.Parser
+	// Fset     *token.FileSet // Compiler.Fset ref
+	Filename string
+	Ast      *ast.File
+	Parser   *parser.Parser
 }
 
 type (

@@ -2,80 +2,87 @@ package compiler
 
 import (
 	"fmt"
-	p "go/parser"
 	"go/token"
-	"os"
 
-	"github.com/antlr4-go/antlr/v4"
 	ts "github.com/tree-sitter/go-tree-sitter"
 
 	"github.com/smtx/ast"
-	"github.com/smtx/parser"
 	"github.com/smtx/utils"
 )
 
 // @TODO: use: https://pkg.go.dev/golang.org/x/tools/go/ast/astutil
 
-func BuildFileSet(fset *token.FileSet, parser *parser.Parser, filename string) {
-	file := fset.AddFile(filename, -1, parser.Tree.GetTokenStream().Size())
+// func BuildFileSetFromParser(fset *token.FileSet, filename string, parser *parser.Parser) {
+// 	file := fset.AddFile(filename, -1, parser.Tree.GetTokenStream().Size())
 
-	// Process all tokens from ANTLR
-	stream := parser.Tree.GetTokenStream()
-	for i := 0; i < stream.Size(); i++ {
-		token := stream.Get(i)
-		if token.GetChannel() == antlr.TokenDefaultChannel {
-			pos := file.Pos(token.GetStart())
-			end := file.Pos(token.GetStop() + 1)
+// 	// Process all tokens from ANTLR
+// 	stream := parser.Tree.GetTokenStream()
+// 	// stream.Fill()
+// 	println("stream size:", stream.Size())
+// 	for i := range stream.Size() {
+// 		token := stream.Get(i)
+// 		if token.GetChannel() != antlr.TokenDefaultChannel {
+// 			continue
+// 		}
 
-			// Create token positions
-			file.AddLine(int(pos))
+// 		// pos := file.Pos(token.GetStart())
+// 		// end := file.Pos(token.GetStop() + 1)
+// 		_pos := token.GetStart()
+// 		_end := token.GetStop() + 1
 
-			// Check for newline in token text instead of specific token type
-			if text := token.GetText(); text == "\n" || text == "\r\n" {
-				// if token.GetTokenType() == parser.NEWLINE {
-				file.AddLine(int(end))
-			}
-		}
-	}
-}
+// 		// Create token positions
+// 		file.AddLine(int(_pos))
 
-func BuildSourceFile(filename string) *ast.SourceFile {
-	src := utils.ReadFileBytes(filename)
-	sf := &ast.SourceFile{
-		Src: src,
-		// Parser: parser.NewParser(src),
-	}
-	return sf
-}
+// 		// println("token:", token.GetText(), "pos:", pos, "end:", end)
+// 		// println("token:", token.GetText(), "pos:", _pos, "end:", _end)
 
-func BuildSourceFileList(filenames []*string) []*ast.SourceFile {
-	var sources []*ast.SourceFile
-	for _, filename := range filenames {
-		r, err := os.Open(*filename)
-		if err != nil {
-			fmt.Printf("Error opening file %s: %v\n", *filename, err)
-			continue
-		}
-		defer r.Close()
+// 		// Check for newline in token text instead of specific token type
+// 		if text := token.GetText(); text == "\n" || text == "\r\n" {
+// 			// if token.GetTokenType() == parser.NEWLINE {
+// 			file.AddLine(int(_end))
+// 			println("newline token: \\n", "pos:", _pos, "end:", _end)
+// 		}
 
-		sources = append(sources, BuildSourceFile(*filename))
-	}
-	return sources
-}
+// 	}
+// }
 
-func BuildGoSourceFile(filename string) *ast.SourceFile {
-	fset := token.NewFileSet()
-	f, err := p.ParseFile(fset, filename, nil, 0)
-	if err != nil {
-		panic(fmt.Sprintf("Error parsing file %s: %v", filename, err))
-	}
+// func BuildSourceFile(filename string) *ast.SourceFile {
+// 	src := utils.ReadFileBytes(filename)
+// 	sf := &ast.SourceFile{
+// 		Src: src,
+// 		// Parser: parser.NewParser(src),
+// 	}
+// 	return sf
+// }
 
-	sf := BuildSourceFile(filename)
-	sf.Fset = fset
-	sf.Ast = f
+// func BuildSourceFileList(filenames []*string) []*ast.SourceFile {
+// 	var sources []*ast.SourceFile
+// 	for _, filename := range filenames {
+// 		r, err := os.Open(*filename)
+// 		if err != nil {
+// 			fmt.Printf("Error opening file %s: %v\n", *filename, err)
+// 			continue
+// 		}
+// 		defer r.Close()
 
-	return sf
-}
+// 		sources = append(sources, BuildSourceFile(*filename))
+// 	}
+// 	return sources
+// }
+
+// func BuildGoSourceFile(filename string) *ast.SourceFile {
+// 	fset := token.NewFileSet()
+// 	f, err := p.ParseFile(fset, filename, nil, 0)
+// 	if err != nil {
+// 		panic(fmt.Sprintf("Error parsing file %s: %v", filename, err))
+// 	}
+
+// 	sf := BuildSourceFile(filename)
+// 	sf.Fset = fset
+// 	sf.Ast = f
+
+// 	return sf
+// }
 
 func BuildMainFunction(stmts *[]ast.Stmt) *ast.FuncDecl {
 	if stmts == nil {

@@ -2,6 +2,7 @@ package parser
 
 import (
 	"fmt"
+	"go/token"
 	"os"
 
 	"github.com/antlr4-go/antlr/v4"
@@ -16,12 +17,15 @@ func (p *Parser) ResetLexer() {
 	p.Lexer.Reset()
 }
 
-func NewParser(filePath string) *Parser {
-	input, _ := antlr.NewFileStream(filePath)
+func NewParser(fset *token.FileSet, filename string) *Parser {
+	input, _ := antlr.NewFileStream(filename)
 	lexer := NewSMTXLexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)
 	parser := NewSMTXParser(stream)
+
 	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
+	// stream.Fill() // necessary to for fset building
+	NewFileSet(fset, filename, []byte(input.String()))
 
 	return &Parser{
 		Lexer: lexer,
@@ -29,7 +33,14 @@ func NewParser(filePath string) *Parser {
 	}
 }
 
-func VisualizeParserGraph(parser *Parser, filePath string) {
+func NewFileSet(fset *token.FileSet, filename string, content []byte) {
+	file := fset.AddFile(filename, -1, len(content))
+
+	file.SetLinesForContent(content)
+}
+
+func VisualizeParserGraph(parser *Parser, filename string) {
+	println("Visualizing parser graph for:", filename)
 	tree := parser.Tree.Script()
 	visualizer := NewGraphvizVisitor(
 		parser.Tree.GetRuleNames(),
@@ -37,8 +48,20 @@ func VisualizeParserGraph(parser *Parser, filePath string) {
 	)
 	visualizer.Visit(tree)
 
-	err := os.WriteFile(filePath+".dot", []byte(visualizer.GetDOT()), 0644)
+	err := os.WriteFile(filename+".dot", []byte(visualizer.GetDOT()), 0644)
 	if err != nil {
 		fmt.Printf("Error writing DOT file: %v\n", err)
 	}
+
+	parser.ResetLexer()
 }
+
+// type FileStream struct {
+// 	InputStream
+// 	filename string
+// }
+
+// // NewInputStream creates a new input stream from the given string
+// func NewInputStream(content []byte) *antlr.InputStream {
+// 	return antlr.NewInputStream(string(content))
+// }

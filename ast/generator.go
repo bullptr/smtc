@@ -5,59 +5,36 @@ import (
 	"fmt"
 	"go/ast"
 	"go/printer"
+	"go/token"
 
 	"github.com/smtx/utils"
 )
 
-func Generate(sf *SourceFile) string {
+func Generate(fset *token.FileSet, sf *SourceFile) string {
 	var buf bytes.Buffer
-	printer.Fprint(&buf, sf.Fset, sf.Ast)
+	printer.Fprint(&buf, fset, sf.Ast)
 
 	return buf.String()
 }
 
-func GenerateFile(sf *SourceFile, filename *string) {
-	// @TODO: fix this
-	// if filename == nil {
-	// 	filename = &sf.Path
-	// }
-
-	sourceCode := Generate(sf)
-	err := utils.WriteFileBytes(*filename, []byte(sourceCode))
+func GenerateFile(fset *token.FileSet, sf *SourceFile) {
+	sourceCode := Generate(fset, sf)
+	err := utils.WriteFileBytes(sf.Filename, []byte(sourceCode))
 	if err != nil {
 		panic(err)
 	}
 }
 
-func PrintAst(Ast *File) {
+func PrintAst(fset *token.FileSet, Ast *File) {
 	utils.PrintSectionHeader("AST")
 	if Ast == nil {
 		panic("AST is nil")
 	}
 
-	// @TODO add fset
-	ast.Print(nil, Ast)
+	ast.Print(fset, Ast)
 }
 
-func PrintSourceFile(sf *SourceFile) {
+func PrintSourceFile(fset *token.FileSet, sf *SourceFile) {
 	utils.PrintSectionHeader("Source File")
-	fmt.Println(Generate(sf))
-}
-
-// @TODO: update this to use the new parser
-func PrintParser(sf *SourceFile) {
-	if sf.Parser == nil {
-		panic("Parser is nil")
-	}
-	// println(sf.Parser.RootNode().ToSexp())
-}
-
-// @TODO: update this to use the new parser
-func PrettyPrintParser(sf *SourceFile) {
-	if sf.Parser == nil {
-		panic("Parser is nil")
-	}
-
-	// out := utils.PrettySExp(sf.Parser.RootNode().ToSexp())
-	// println(out)
+	fmt.Println(Generate(fset, sf))
 }
