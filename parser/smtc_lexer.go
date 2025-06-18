@@ -1,4 +1,4 @@
-// Code generated from /home/baeyun/smtc/parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from /home/baeyun/smtc/parser/SMTC.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
 package parser
 
@@ -14,14 +14,14 @@ var _ = fmt.Printf
 var _ = sync.Once{}
 var _ = unicode.IsLetter
 
-type SMTXLexer struct {
+type SMTCLexer struct {
 	*antlr.BaseLexer
 	channelNames []string
 	modeNames    []string
 	// TODO: EOF string
 }
 
-var SMTXLexerLexerStaticData struct {
+var SMTCLexerLexerStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	ChannelNames           []string
@@ -34,8 +34,8 @@ var SMTXLexerLexerStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func smtxlexerLexerInit() {
-	staticData := &SMTXLexerLexerStaticData
+func smtclexerLexerInit() {
+	staticData := &SMTCLexerLexerStaticData
 	staticData.ChannelNames = []string{
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN",
 	}
@@ -822,143 +822,143 @@ func smtxlexerLexerInit() {
 	}
 }
 
-// SMTXLexerInit initializes any static state used to implement SMTXLexer. By default the
+// SMTCLexerInit initializes any static state used to implement SMTCLexer. By default the
 // static state used to implement the lexer is lazily initialized during the first call to
-// NewSMTXLexer(). You can call this function if you wish to initialize the static state ahead
+// NewSMTCLexer(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func SMTXLexerInit() {
-	staticData := &SMTXLexerLexerStaticData
-	staticData.once.Do(smtxlexerLexerInit)
+func SMTCLexerInit() {
+	staticData := &SMTCLexerLexerStaticData
+	staticData.once.Do(smtclexerLexerInit)
 }
 
-// NewSMTXLexer produces a new lexer instance for the optional input antlr.CharStream.
-func NewSMTXLexer(input antlr.CharStream) *SMTXLexer {
-	SMTXLexerInit()
-	l := new(SMTXLexer)
+// NewSMTCLexer produces a new lexer instance for the optional input antlr.CharStream.
+func NewSMTCLexer(input antlr.CharStream) *SMTCLexer {
+	SMTCLexerInit()
+	l := new(SMTCLexer)
 	l.BaseLexer = antlr.NewBaseLexer(input)
-	staticData := &SMTXLexerLexerStaticData
+	staticData := &SMTCLexerLexerStaticData
 	l.Interpreter = antlr.NewLexerATNSimulator(l, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
 	l.channelNames = staticData.ChannelNames
 	l.modeNames = staticData.ModeNames
 	l.RuleNames = staticData.RuleNames
 	l.LiteralNames = staticData.LiteralNames
 	l.SymbolicNames = staticData.SymbolicNames
-	l.GrammarFileName = "SMTX.g4"
+	l.GrammarFileName = "SMTC.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
 	return l
 }
 
-// SMTXLexer tokens.
+// SMTCLexer tokens.
 const (
-	SMTXLexerT__0                           = 1
-	SMTXLexerT__1                           = 2
-	SMTXLexerT__2                           = 3
-	SMTXLexerT__3                           = 4
-	SMTXLexerT__4                           = 5
-	SMTXLexerT__5                           = 6
-	SMTXLexerT__6                           = 7
-	SMTXLexerT__7                           = 8
-	SMTXLexerT__8                           = 9
-	SMTXLexerT__9                           = 10
-	SMTXLexerT__10                          = 11
-	SMTXLexerT__11                          = 12
-	SMTXLexerT__12                          = 13
-	SMTXLexerT__13                          = 14
-	SMTXLexerT__14                          = 15
-	SMTXLexerT__15                          = 16
-	SMTXLexerT__16                          = 17
-	SMTXLexerT__17                          = 18
-	SMTXLexerT__18                          = 19
-	SMTXLexerT__19                          = 20
-	SMTXLexerT__20                          = 21
-	SMTXLexerT__21                          = 22
-	SMTXLexerT__22                          = 23
-	SMTXLexerT__23                          = 24
-	SMTXLexerT__24                          = 25
-	SMTXLexerT__25                          = 26
-	SMTXLexerT__26                          = 27
-	SMTXLexerT__27                          = 28
-	SMTXLexerT__28                          = 29
-	SMTXLexerT__29                          = 30
-	SMTXLexerT__30                          = 31
-	SMTXLexerT__31                          = 32
-	SMTXLexerT__32                          = 33
-	SMTXLexerT__33                          = 34
-	SMTXLexerT__34                          = 35
-	SMTXLexerT__35                          = 36
-	SMTXLexerT__36                          = 37
-	SMTXLexerT__37                          = 38
-	SMTXLexerT__38                          = 39
-	SMTXLexerT__39                          = 40
-	SMTXLexerT__40                          = 41
-	SMTXLexerT__41                          = 42
-	SMTXLexerWS                             = 43
-	SMTXLexerCOMMENT                        = 44
-	SMTXLexerNUMERAL                        = 45
-	SMTXLexerDECIMAL                        = 46
-	SMTXLexerHEXADECIMAL                    = 47
-	SMTXLexerBINARY                         = 48
-	SMTXLexerSTRING                         = 49
-	SMTXLexerPAROPEN                        = 50
-	SMTXLexerPARCLOSE                       = 51
-	SMTXLexerSIMPLE_SYMBOL                  = 52
-	SMTXLexerQUOTED_SYMBOL                  = 53
-	SMTXLexerKEYWORD                        = 54
-	SMTXLexerPS_NOT                         = 55
-	SMTXLexerPS_BOOL                        = 56
-	SMTXLexerPS_CONTINUEDEXECUTION          = 57
-	SMTXLexerPS_ERROR                       = 58
-	SMTXLexerPS_FALSE                       = 59
-	SMTXLexerPS_IMMEDIATEEXIT               = 60
-	SMTXLexerPS_INCOMPLETE                  = 61
-	SMTXLexerPS_LOGIC                       = 62
-	SMTXLexerPS_MEMOUT                      = 63
-	SMTXLexerPS_SAT                         = 64
-	SMTXLexerPS_SUCCESS                     = 65
-	SMTXLexerPS_THEORY                      = 66
-	SMTXLexerPS_TRUE                        = 67
-	SMTXLexerPS_UNKNOWN                     = 68
-	SMTXLexerPS_UNSUPPORTED                 = 69
-	SMTXLexerPS_UNSAT                       = 70
-	SMTXLexerPK_ALL_STATISTICS              = 71
-	SMTXLexerPK_ASSERTION_STACK_LEVELS      = 72
-	SMTXLexerPK_AUTHORS                     = 73
-	SMTXLexerPK_CATEGORY                    = 74
-	SMTXLexerPK_CHAINABLE                   = 75
-	SMTXLexerPK_DEFINITION                  = 76
-	SMTXLexerPK_DIAGNOSTIC_OUTPUT_CHANNEL   = 77
-	SMTXLexerPK_ERROR_BEHAVIOR              = 78
-	SMTXLexerPK_EXTENSIONS                  = 79
-	SMTXLexerPK_FUNS                        = 80
-	SMTXLexerPK_FUNS_DESCRIPTION            = 81
-	SMTXLexerPK_GLOBAL_DECLARATIONS         = 82
-	SMTXLexerPK_INTERACTIVE_MODE            = 83
-	SMTXLexerPK_LANGUAGE                    = 84
-	SMTXLexerPK_LEFT_ASSOC                  = 85
-	SMTXLexerPK_LICENSE                     = 86
-	SMTXLexerPK_NAME                        = 87
-	SMTXLexerPK_NAMED                       = 88
-	SMTXLexerPK_NOTES                       = 89
-	SMTXLexerPK_PATTERN                     = 90
-	SMTXLexerPK_PRINT_SUCCESS               = 91
-	SMTXLexerPK_PRODUCE_ASSIGNMENTS         = 92
-	SMTXLexerPK_PRODUCE_MODELS              = 93
-	SMTXLexerPK_PRODUCE_PROOFS              = 94
-	SMTXLexerPK_PRODUCE_UNSAT_ASSUMPTIONS   = 95
-	SMTXLexerPK_PRODUCE_UNSAT_CORES         = 96
-	SMTXLexerPK_RANDOM_SEED                 = 97
-	SMTXLexerPK_REASON_UNKNOWN              = 98
-	SMTXLexerPK_REGULAR_OUTPUT_CHANNEL      = 99
-	SMTXLexerPK_REPRODUCIBLE_RESOURCE_LIMIT = 100
-	SMTXLexerPK_RIGHT_ASSOC                 = 101
-	SMTXLexerPK_SMT_LIB_VERSION             = 102
-	SMTXLexerPK_SORTS                       = 103
-	SMTXLexerPK_SORTS_DESCRIPTION           = 104
-	SMTXLexerPK_SOURCE                      = 105
-	SMTXLexerPK_STATUS                      = 106
-	SMTXLexerPK_THEORIES                    = 107
-	SMTXLexerPK_VALUES                      = 108
-	SMTXLexerPK_VERBOSITY                   = 109
-	SMTXLexerPK_VERSION                     = 110
+	SMTCLexerT__0                           = 1
+	SMTCLexerT__1                           = 2
+	SMTCLexerT__2                           = 3
+	SMTCLexerT__3                           = 4
+	SMTCLexerT__4                           = 5
+	SMTCLexerT__5                           = 6
+	SMTCLexerT__6                           = 7
+	SMTCLexerT__7                           = 8
+	SMTCLexerT__8                           = 9
+	SMTCLexerT__9                           = 10
+	SMTCLexerT__10                          = 11
+	SMTCLexerT__11                          = 12
+	SMTCLexerT__12                          = 13
+	SMTCLexerT__13                          = 14
+	SMTCLexerT__14                          = 15
+	SMTCLexerT__15                          = 16
+	SMTCLexerT__16                          = 17
+	SMTCLexerT__17                          = 18
+	SMTCLexerT__18                          = 19
+	SMTCLexerT__19                          = 20
+	SMTCLexerT__20                          = 21
+	SMTCLexerT__21                          = 22
+	SMTCLexerT__22                          = 23
+	SMTCLexerT__23                          = 24
+	SMTCLexerT__24                          = 25
+	SMTCLexerT__25                          = 26
+	SMTCLexerT__26                          = 27
+	SMTCLexerT__27                          = 28
+	SMTCLexerT__28                          = 29
+	SMTCLexerT__29                          = 30
+	SMTCLexerT__30                          = 31
+	SMTCLexerT__31                          = 32
+	SMTCLexerT__32                          = 33
+	SMTCLexerT__33                          = 34
+	SMTCLexerT__34                          = 35
+	SMTCLexerT__35                          = 36
+	SMTCLexerT__36                          = 37
+	SMTCLexerT__37                          = 38
+	SMTCLexerT__38                          = 39
+	SMTCLexerT__39                          = 40
+	SMTCLexerT__40                          = 41
+	SMTCLexerT__41                          = 42
+	SMTCLexerWS                             = 43
+	SMTCLexerCOMMENT                        = 44
+	SMTCLexerNUMERAL                        = 45
+	SMTCLexerDECIMAL                        = 46
+	SMTCLexerHEXADECIMAL                    = 47
+	SMTCLexerBINARY                         = 48
+	SMTCLexerSTRING                         = 49
+	SMTCLexerPAROPEN                        = 50
+	SMTCLexerPARCLOSE                       = 51
+	SMTCLexerSIMPLE_SYMBOL                  = 52
+	SMTCLexerQUOTED_SYMBOL                  = 53
+	SMTCLexerKEYWORD                        = 54
+	SMTCLexerPS_NOT                         = 55
+	SMTCLexerPS_BOOL                        = 56
+	SMTCLexerPS_CONTINUEDEXECUTION          = 57
+	SMTCLexerPS_ERROR                       = 58
+	SMTCLexerPS_FALSE                       = 59
+	SMTCLexerPS_IMMEDIATEEXIT               = 60
+	SMTCLexerPS_INCOMPLETE                  = 61
+	SMTCLexerPS_LOGIC                       = 62
+	SMTCLexerPS_MEMOUT                      = 63
+	SMTCLexerPS_SAT                         = 64
+	SMTCLexerPS_SUCCESS                     = 65
+	SMTCLexerPS_THEORY                      = 66
+	SMTCLexerPS_TRUE                        = 67
+	SMTCLexerPS_UNKNOWN                     = 68
+	SMTCLexerPS_UNSUPPORTED                 = 69
+	SMTCLexerPS_UNSAT                       = 70
+	SMTCLexerPK_ALL_STATISTICS              = 71
+	SMTCLexerPK_ASSERTION_STACK_LEVELS      = 72
+	SMTCLexerPK_AUTHORS                     = 73
+	SMTCLexerPK_CATEGORY                    = 74
+	SMTCLexerPK_CHAINABLE                   = 75
+	SMTCLexerPK_DEFINITION                  = 76
+	SMTCLexerPK_DIAGNOSTIC_OUTPUT_CHANNEL   = 77
+	SMTCLexerPK_ERROR_BEHAVIOR              = 78
+	SMTCLexerPK_EXTENSIONS                  = 79
+	SMTCLexerPK_FUNS                        = 80
+	SMTCLexerPK_FUNS_DESCRIPTION            = 81
+	SMTCLexerPK_GLOBAL_DECLARATIONS         = 82
+	SMTCLexerPK_INTERACTIVE_MODE            = 83
+	SMTCLexerPK_LANGUAGE                    = 84
+	SMTCLexerPK_LEFT_ASSOC                  = 85
+	SMTCLexerPK_LICENSE                     = 86
+	SMTCLexerPK_NAME                        = 87
+	SMTCLexerPK_NAMED                       = 88
+	SMTCLexerPK_NOTES                       = 89
+	SMTCLexerPK_PATTERN                     = 90
+	SMTCLexerPK_PRINT_SUCCESS               = 91
+	SMTCLexerPK_PRODUCE_ASSIGNMENTS         = 92
+	SMTCLexerPK_PRODUCE_MODELS              = 93
+	SMTCLexerPK_PRODUCE_PROOFS              = 94
+	SMTCLexerPK_PRODUCE_UNSAT_ASSUMPTIONS   = 95
+	SMTCLexerPK_PRODUCE_UNSAT_CORES         = 96
+	SMTCLexerPK_RANDOM_SEED                 = 97
+	SMTCLexerPK_REASON_UNKNOWN              = 98
+	SMTCLexerPK_REGULAR_OUTPUT_CHANNEL      = 99
+	SMTCLexerPK_REPRODUCIBLE_RESOURCE_LIMIT = 100
+	SMTCLexerPK_RIGHT_ASSOC                 = 101
+	SMTCLexerPK_SMT_LIB_VERSION             = 102
+	SMTCLexerPK_SORTS                       = 103
+	SMTCLexerPK_SORTS_DESCRIPTION           = 104
+	SMTCLexerPK_SOURCE                      = 105
+	SMTCLexerPK_STATUS                      = 106
+	SMTCLexerPK_THEORIES                    = 107
+	SMTCLexerPK_VALUES                      = 108
+	SMTCLexerPK_VERBOSITY                   = 109
+	SMTCLexerPK_VERSION                     = 110
 )

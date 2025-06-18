@@ -1,10 +1,10 @@
-package smtv_test
+package smtc_test
 
 import (
 	"testing"
 
-	. "github.com/smtx/logics/QF_LIA"
-	. "github.com/smtx/prelude"
+	. "github.com/smtc/logics/QF_LIA"
+	. "github.com/smtc/prelude"
 )
 
 func TestMain(m *testing.M) {

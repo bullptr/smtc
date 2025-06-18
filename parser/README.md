@@ -1,13 +1,13 @@
 # Benchmarks
 
-The following benchmark results compare the performance of [TreeSitter](https://tree-sitter.github.io/tree-sitter/) and [Antlr4](https://github.com/antlr4-go/antlr) SMTX parser implementations.
+The following benchmark results compare the performance of [TreeSitter](https://tree-sitter.github.io/tree-sitter/) and [Antlr4](https://github.com/antlr4-go/antlr) SMTC parser implementations.
 
 Environment:
 
 ```bash
 goos: linux
 goarch: amd64
-pkg: github.com/smtx/benchmarks
+pkg: github.com/smtc/benchmarks
 cpu: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx
 ```
 
@@ -58,7 +58,7 @@ The most striking advantage is TreeSitter's memory efficiency, particularly with
 ```bash
 goos: linux
 goarch: amd64
-pkg: github.com/smtx/benchmarks
+pkg: github.com/smtc/benchmarks
 cpu: AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  
 BenchmarkParsers
 BenchmarkParsers/TreeSitter_Small
@@ -70,5 +70,5 @@ BenchmarkParsers/TreeSitter_Large-8                   85          13539014 ns/op
 BenchmarkParsers/Antlr_Large
 BenchmarkParsers/Antlr_Large-8                        81          14341820 ns/op         3245091 B/op      40446 allocs/op
 PASS
-ok      github.com/smtx/benchmarks      4.781s
+ok      github.com/smtc/benchmarks      4.781s
 ```

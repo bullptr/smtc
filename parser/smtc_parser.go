@@ -1,6 +1,6 @@
-// Code generated from /home/baeyun/smtc/parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from /home/baeyun/smtc/parser/SMTC.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package parser // SMTX
+package parser // SMTC
 import (
 	"fmt"
 	"strconv"
@@ -14,11 +14,11 @@ var _ = fmt.Printf
 var _ = strconv.Itoa
 var _ = sync.Once{}
 
-type SMTXParser struct {
+type SMTCParser struct {
 	*antlr.BaseParser
 }
 
-var SMTXParserStaticData struct {
+var SMTCParserStaticData struct {
 	once                   sync.Once
 	serializedATN          []int32
 	LiteralNames           []string
@@ -29,8 +29,8 @@ var SMTXParserStaticData struct {
 	decisionToDFA          []*antlr.DFA
 }
 
-func smtxParserInit() {
-	staticData := &SMTXParserStaticData
+func smtcParserInit() {
+	staticData := &SMTCParserStaticData
 	staticData.LiteralNames = []string{
 		"", "'assert'", "'check-sat'", "'check-sat-assuming'", "'declare-const'",
 		"'declare-datatype'", "'declare-datatypes'", "'declare-fun'", "'declare-sort'",
@@ -347,173 +347,173 @@ func smtxParserInit() {
 	}
 }
 
-// SMTXParserInit initializes any static state used to implement SMTXParser. By default the
+// SMTCParserInit initializes any static state used to implement SMTCParser. By default the
 // static state used to implement the parser is lazily initialized during the first call to
-// NewSMTXParser(). You can call this function if you wish to initialize the static state ahead
+// NewSMTCParser(). You can call this function if you wish to initialize the static state ahead
 // of time.
-func SMTXParserInit() {
-	staticData := &SMTXParserStaticData
-	staticData.once.Do(smtxParserInit)
+func SMTCParserInit() {
+	staticData := &SMTCParserStaticData
+	staticData.once.Do(smtcParserInit)
 }
 
-// NewSMTXParser produces a new parser instance for the optional input antlr.TokenStream.
-func NewSMTXParser(input antlr.TokenStream) *SMTXParser {
-	SMTXParserInit()
-	this := new(SMTXParser)
+// NewSMTCParser produces a new parser instance for the optional input antlr.TokenStream.
+func NewSMTCParser(input antlr.TokenStream) *SMTCParser {
+	SMTCParserInit()
+	this := new(SMTCParser)
 	this.BaseParser = antlr.NewBaseParser(input)
-	staticData := &SMTXParserStaticData
+	staticData := &SMTCParserStaticData
 	this.Interpreter = antlr.NewParserATNSimulator(this, staticData.atn, staticData.decisionToDFA, staticData.PredictionContextCache)
 	this.RuleNames = staticData.RuleNames
 	this.LiteralNames = staticData.LiteralNames
 	this.SymbolicNames = staticData.SymbolicNames
-	this.GrammarFileName = "SMTX.g4"
+	this.GrammarFileName = "SMTC.g4"
 
 	return this
 }
 
-// SMTXParser tokens.
+// SMTCParser tokens.
 const (
-	SMTXParserEOF                            = antlr.TokenEOF
-	SMTXParserT__0                           = 1
-	SMTXParserT__1                           = 2
-	SMTXParserT__2                           = 3
-	SMTXParserT__3                           = 4
-	SMTXParserT__4                           = 5
-	SMTXParserT__5                           = 6
-	SMTXParserT__6                           = 7
-	SMTXParserT__7                           = 8
-	SMTXParserT__8                           = 9
-	SMTXParserT__9                           = 10
-	SMTXParserT__10                          = 11
-	SMTXParserT__11                          = 12
-	SMTXParserT__12                          = 13
-	SMTXParserT__13                          = 14
-	SMTXParserT__14                          = 15
-	SMTXParserT__15                          = 16
-	SMTXParserT__16                          = 17
-	SMTXParserT__17                          = 18
-	SMTXParserT__18                          = 19
-	SMTXParserT__19                          = 20
-	SMTXParserT__20                          = 21
-	SMTXParserT__21                          = 22
-	SMTXParserT__22                          = 23
-	SMTXParserT__23                          = 24
-	SMTXParserT__24                          = 25
-	SMTXParserT__25                          = 26
-	SMTXParserT__26                          = 27
-	SMTXParserT__27                          = 28
-	SMTXParserT__28                          = 29
-	SMTXParserT__29                          = 30
-	SMTXParserT__30                          = 31
-	SMTXParserT__31                          = 32
-	SMTXParserT__32                          = 33
-	SMTXParserT__33                          = 34
-	SMTXParserT__34                          = 35
-	SMTXParserT__35                          = 36
-	SMTXParserT__36                          = 37
-	SMTXParserT__37                          = 38
-	SMTXParserT__38                          = 39
-	SMTXParserT__39                          = 40
-	SMTXParserT__40                          = 41
-	SMTXParserT__41                          = 42
-	SMTXParserWS                             = 43
-	SMTXParserCOMMENT                        = 44
-	SMTXParserNUMERAL                        = 45
-	SMTXParserDECIMAL                        = 46
-	SMTXParserHEXADECIMAL                    = 47
-	SMTXParserBINARY                         = 48
-	SMTXParserSTRING                         = 49
-	SMTXParserPAROPEN                        = 50
-	SMTXParserPARCLOSE                       = 51
-	SMTXParserSIMPLE_SYMBOL                  = 52
-	SMTXParserQUOTED_SYMBOL                  = 53
-	SMTXParserKEYWORD                        = 54
-	SMTXParserPS_NOT                         = 55
-	SMTXParserPS_BOOL                        = 56
-	SMTXParserPS_CONTINUEDEXECUTION          = 57
-	SMTXParserPS_ERROR                       = 58
-	SMTXParserPS_FALSE                       = 59
-	SMTXParserPS_IMMEDIATEEXIT               = 60
-	SMTXParserPS_INCOMPLETE                  = 61
-	SMTXParserPS_LOGIC                       = 62
-	SMTXParserPS_MEMOUT                      = 63
-	SMTXParserPS_SAT                         = 64
-	SMTXParserPS_SUCCESS                     = 65
-	SMTXParserPS_THEORY                      = 66
-	SMTXParserPS_TRUE                        = 67
-	SMTXParserPS_UNKNOWN                     = 68
-	SMTXParserPS_UNSUPPORTED                 = 69
-	SMTXParserPS_UNSAT                       = 70
-	SMTXParserPK_ALL_STATISTICS              = 71
-	SMTXParserPK_ASSERTION_STACK_LEVELS      = 72
-	SMTXParserPK_AUTHORS                     = 73
-	SMTXParserPK_CATEGORY                    = 74
-	SMTXParserPK_CHAINABLE                   = 75
-	SMTXParserPK_DEFINITION                  = 76
-	SMTXParserPK_DIAGNOSTIC_OUTPUT_CHANNEL   = 77
-	SMTXParserPK_ERROR_BEHAVIOR              = 78
-	SMTXParserPK_EXTENSIONS                  = 79
-	SMTXParserPK_FUNS                        = 80
-	SMTXParserPK_FUNS_DESCRIPTION            = 81
-	SMTXParserPK_GLOBAL_DECLARATIONS         = 82
-	SMTXParserPK_INTERACTIVE_MODE            = 83
-	SMTXParserPK_LANGUAGE                    = 84
-	SMTXParserPK_LEFT_ASSOC                  = 85
-	SMTXParserPK_LICENSE                     = 86
-	SMTXParserPK_NAME                        = 87
-	SMTXParserPK_NAMED                       = 88
-	SMTXParserPK_NOTES                       = 89
-	SMTXParserPK_PATTERN                     = 90
-	SMTXParserPK_PRINT_SUCCESS               = 91
-	SMTXParserPK_PRODUCE_ASSIGNMENTS         = 92
-	SMTXParserPK_PRODUCE_MODELS              = 93
-	SMTXParserPK_PRODUCE_PROOFS              = 94
-	SMTXParserPK_PRODUCE_UNSAT_ASSUMPTIONS   = 95
-	SMTXParserPK_PRODUCE_UNSAT_CORES         = 96
-	SMTXParserPK_RANDOM_SEED                 = 97
-	SMTXParserPK_REASON_UNKNOWN              = 98
-	SMTXParserPK_REGULAR_OUTPUT_CHANNEL      = 99
-	SMTXParserPK_REPRODUCIBLE_RESOURCE_LIMIT = 100
-	SMTXParserPK_RIGHT_ASSOC                 = 101
-	SMTXParserPK_SMT_LIB_VERSION             = 102
-	SMTXParserPK_SORTS                       = 103
-	SMTXParserPK_SORTS_DESCRIPTION           = 104
-	SMTXParserPK_SOURCE                      = 105
-	SMTXParserPK_STATUS                      = 106
-	SMTXParserPK_THEORIES                    = 107
-	SMTXParserPK_VALUES                      = 108
-	SMTXParserPK_VERBOSITY                   = 109
-	SMTXParserPK_VERSION                     = 110
+	SMTCParserEOF                            = antlr.TokenEOF
+	SMTCParserT__0                           = 1
+	SMTCParserT__1                           = 2
+	SMTCParserT__2                           = 3
+	SMTCParserT__3                           = 4
+	SMTCParserT__4                           = 5
+	SMTCParserT__5                           = 6
+	SMTCParserT__6                           = 7
+	SMTCParserT__7                           = 8
+	SMTCParserT__8                           = 9
+	SMTCParserT__9                           = 10
+	SMTCParserT__10                          = 11
+	SMTCParserT__11                          = 12
+	SMTCParserT__12                          = 13
+	SMTCParserT__13                          = 14
+	SMTCParserT__14                          = 15
+	SMTCParserT__15                          = 16
+	SMTCParserT__16                          = 17
+	SMTCParserT__17                          = 18
+	SMTCParserT__18                          = 19
+	SMTCParserT__19                          = 20
+	SMTCParserT__20                          = 21
+	SMTCParserT__21                          = 22
+	SMTCParserT__22                          = 23
+	SMTCParserT__23                          = 24
+	SMTCParserT__24                          = 25
+	SMTCParserT__25                          = 26
+	SMTCParserT__26                          = 27
+	SMTCParserT__27                          = 28
+	SMTCParserT__28                          = 29
+	SMTCParserT__29                          = 30
+	SMTCParserT__30                          = 31
+	SMTCParserT__31                          = 32
+	SMTCParserT__32                          = 33
+	SMTCParserT__33                          = 34
+	SMTCParserT__34                          = 35
+	SMTCParserT__35                          = 36
+	SMTCParserT__36                          = 37
+	SMTCParserT__37                          = 38
+	SMTCParserT__38                          = 39
+	SMTCParserT__39                          = 40
+	SMTCParserT__40                          = 41
+	SMTCParserT__41                          = 42
+	SMTCParserWS                             = 43
+	SMTCParserCOMMENT                        = 44
+	SMTCParserNUMERAL                        = 45
+	SMTCParserDECIMAL                        = 46
+	SMTCParserHEXADECIMAL                    = 47
+	SMTCParserBINARY                         = 48
+	SMTCParserSTRING                         = 49
+	SMTCParserPAROPEN                        = 50
+	SMTCParserPARCLOSE                       = 51
+	SMTCParserSIMPLE_SYMBOL                  = 52
+	SMTCParserQUOTED_SYMBOL                  = 53
+	SMTCParserKEYWORD                        = 54
+	SMTCParserPS_NOT                         = 55
+	SMTCParserPS_BOOL                        = 56
+	SMTCParserPS_CONTINUEDEXECUTION          = 57
+	SMTCParserPS_ERROR                       = 58
+	SMTCParserPS_FALSE                       = 59
+	SMTCParserPS_IMMEDIATEEXIT               = 60
+	SMTCParserPS_INCOMPLETE                  = 61
+	SMTCParserPS_LOGIC                       = 62
+	SMTCParserPS_MEMOUT                      = 63
+	SMTCParserPS_SAT                         = 64
+	SMTCParserPS_SUCCESS                     = 65
+	SMTCParserPS_THEORY                      = 66
+	SMTCParserPS_TRUE                        = 67
+	SMTCParserPS_UNKNOWN                     = 68
+	SMTCParserPS_UNSUPPORTED                 = 69
+	SMTCParserPS_UNSAT                       = 70
+	SMTCParserPK_ALL_STATISTICS              = 71
+	SMTCParserPK_ASSERTION_STACK_LEVELS      = 72
+	SMTCParserPK_AUTHORS                     = 73
+	SMTCParserPK_CATEGORY                    = 74
+	SMTCParserPK_CHAINABLE                   = 75
+	SMTCParserPK_DEFINITION                  = 76
+	SMTCParserPK_DIAGNOSTIC_OUTPUT_CHANNEL   = 77
+	SMTCParserPK_ERROR_BEHAVIOR              = 78
+	SMTCParserPK_EXTENSIONS                  = 79
+	SMTCParserPK_FUNS                        = 80
+	SMTCParserPK_FUNS_DESCRIPTION            = 81
+	SMTCParserPK_GLOBAL_DECLARATIONS         = 82
+	SMTCParserPK_INTERACTIVE_MODE            = 83
+	SMTCParserPK_LANGUAGE                    = 84
+	SMTCParserPK_LEFT_ASSOC                  = 85
+	SMTCParserPK_LICENSE                     = 86
+	SMTCParserPK_NAME                        = 87
+	SMTCParserPK_NAMED                       = 88
+	SMTCParserPK_NOTES                       = 89
+	SMTCParserPK_PATTERN                     = 90
+	SMTCParserPK_PRINT_SUCCESS               = 91
+	SMTCParserPK_PRODUCE_ASSIGNMENTS         = 92
+	SMTCParserPK_PRODUCE_MODELS              = 93
+	SMTCParserPK_PRODUCE_PROOFS              = 94
+	SMTCParserPK_PRODUCE_UNSAT_ASSUMPTIONS   = 95
+	SMTCParserPK_PRODUCE_UNSAT_CORES         = 96
+	SMTCParserPK_RANDOM_SEED                 = 97
+	SMTCParserPK_REASON_UNKNOWN              = 98
+	SMTCParserPK_REGULAR_OUTPUT_CHANNEL      = 99
+	SMTCParserPK_REPRODUCIBLE_RESOURCE_LIMIT = 100
+	SMTCParserPK_RIGHT_ASSOC                 = 101
+	SMTCParserPK_SMT_LIB_VERSION             = 102
+	SMTCParserPK_SORTS                       = 103
+	SMTCParserPK_SORTS_DESCRIPTION           = 104
+	SMTCParserPK_SOURCE                      = 105
+	SMTCParserPK_STATUS                      = 106
+	SMTCParserPK_THEORIES                    = 107
+	SMTCParserPK_VALUES                      = 108
+	SMTCParserPK_VERBOSITY                   = 109
+	SMTCParserPK_VERSION                     = 110
 )
 
-// SMTXParser rules.
+// SMTCParser rules.
 const (
-	SMTXParserRULE_script          = 0
-	SMTXParserRULE_command         = 1
-	SMTXParserRULE_symbol          = 2
-	SMTXParserRULE_sort            = 3
-	SMTXParserRULE_sort_dec        = 4
-	SMTXParserRULE_selector_dec    = 5
-	SMTXParserRULE_constructor_dec = 6
-	SMTXParserRULE_datatype_dec    = 7
-	SMTXParserRULE_function_dec    = 8
-	SMTXParserRULE_function_def    = 9
-	SMTXParserRULE_term            = 10
-	SMTXParserRULE_spec_constant   = 11
-	SMTXParserRULE_qual_identifier = 12
-	SMTXParserRULE_var_binding     = 13
-	SMTXParserRULE_sorted_var      = 14
-	SMTXParserRULE_pattern         = 15
-	SMTXParserRULE_symbol_         = 16
-	SMTXParserRULE_match_case      = 17
-	SMTXParserRULE_identifier      = 18
-	SMTXParserRULE_index           = 19
-	SMTXParserRULE_attribute_value = 20
-	SMTXParserRULE_attribute       = 21
-	SMTXParserRULE_info_flag       = 22
-	SMTXParserRULE_option          = 23
-	SMTXParserRULE_b_value         = 24
-	SMTXParserRULE_s_expr          = 25
+	SMTCParserRULE_script          = 0
+	SMTCParserRULE_command         = 1
+	SMTCParserRULE_symbol          = 2
+	SMTCParserRULE_sort            = 3
+	SMTCParserRULE_sort_dec        = 4
+	SMTCParserRULE_selector_dec    = 5
+	SMTCParserRULE_constructor_dec = 6
+	SMTCParserRULE_datatype_dec    = 7
+	SMTCParserRULE_function_dec    = 8
+	SMTCParserRULE_function_def    = 9
+	SMTCParserRULE_term            = 10
+	SMTCParserRULE_spec_constant   = 11
+	SMTCParserRULE_qual_identifier = 12
+	SMTCParserRULE_var_binding     = 13
+	SMTCParserRULE_sorted_var      = 14
+	SMTCParserRULE_pattern         = 15
+	SMTCParserRULE_symbol_         = 16
+	SMTCParserRULE_match_case      = 17
+	SMTCParserRULE_identifier      = 18
+	SMTCParserRULE_index           = 19
+	SMTCParserRULE_attribute_value = 20
+	SMTCParserRULE_attribute       = 21
+	SMTCParserRULE_info_flag       = 22
+	SMTCParserRULE_option          = 23
+	SMTCParserRULE_b_value         = 24
+	SMTCParserRULE_s_expr          = 25
 )
 
 // IScriptContext is an interface to support dynamic dispatch.
@@ -539,13 +539,13 @@ type ScriptContext struct {
 func NewEmptyScriptContext() *ScriptContext {
 	var p = new(ScriptContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_script
+	p.RuleIndex = SMTCParserRULE_script
 	return p
 }
 
 func InitEmptyScriptContext(p *ScriptContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_script
+	p.RuleIndex = SMTCParserRULE_script
 }
 
 func (*ScriptContext) IsScriptContext() {}
@@ -556,7 +556,7 @@ func NewScriptContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_script
+	p.RuleIndex = SMTCParserRULE_script
 
 	return p
 }
@@ -613,20 +613,20 @@ func (s *ScriptContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 }
 
 func (s *ScriptContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterScript(s)
 	}
 }
 
 func (s *ScriptContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitScript(s)
 	}
 }
 
-func (p *SMTXParser) Script() (localctx IScriptContext) {
+func (p *SMTCParser) Script() (localctx IScriptContext) {
 	localctx = NewScriptContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, SMTXParserRULE_script)
+	p.EnterRule(localctx, 0, SMTCParserRULE_script)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -637,7 +637,7 @@ func (p *SMTXParser) Script() (localctx IScriptContext) {
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == SMTXParserPAROPEN {
+	for _la == SMTCParserPAROPEN {
 		{
 			p.SetState(52)
 			p.Command()
@@ -708,13 +708,13 @@ type CommandContext struct {
 func NewEmptyCommandContext() *CommandContext {
 	var p = new(CommandContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_command
+	p.RuleIndex = SMTCParserRULE_command
 	return p
 }
 
 func InitEmptyCommandContext(p *CommandContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_command
+	p.RuleIndex = SMTCParserRULE_command
 }
 
 func (*CommandContext) IsCommandContext() {}
@@ -725,7 +725,7 @@ func NewCommandContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_command
+	p.RuleIndex = SMTCParserRULE_command
 
 	return p
 }
@@ -733,11 +733,11 @@ func NewCommandContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *CommandContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CommandContext) AllPAROPEN() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPAROPEN)
+	return s.GetTokens(SMTCParserPAROPEN)
 }
 
 func (s *CommandContext) PAROPEN(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, i)
+	return s.GetToken(SMTCParserPAROPEN, i)
 }
 
 func (s *CommandContext) AllTerm() []ITermContext {
@@ -782,11 +782,11 @@ func (s *CommandContext) Term(i int) ITermContext {
 }
 
 func (s *CommandContext) AllPARCLOSE() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPARCLOSE)
+	return s.GetTokens(SMTCParserPARCLOSE)
 }
 
 func (s *CommandContext) PARCLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, i)
+	return s.GetToken(SMTCParserPARCLOSE, i)
 }
 
 func (s *CommandContext) AllSymbol() []ISymbolContext {
@@ -954,7 +954,7 @@ func (s *CommandContext) Sort_dec(i int) ISort_decContext {
 }
 
 func (s *CommandContext) NUMERAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserNUMERAL, 0)
+	return s.GetToken(SMTCParserNUMERAL, 0)
 }
 
 func (s *CommandContext) Function_def() IFunction_defContext {
@@ -1015,7 +1015,7 @@ func (s *CommandContext) Function_dec(i int) IFunction_decContext {
 }
 
 func (s *CommandContext) STRING() antlr.TerminalNode {
-	return s.GetToken(SMTXParserSTRING, 0)
+	return s.GetToken(SMTCParserSTRING, 0)
 }
 
 func (s *CommandContext) Info_flag() IInfo_flagContext {
@@ -1035,7 +1035,7 @@ func (s *CommandContext) Info_flag() IInfo_flagContext {
 }
 
 func (s *CommandContext) KEYWORD() antlr.TerminalNode {
-	return s.GetToken(SMTXParserKEYWORD, 0)
+	return s.GetToken(SMTCParserKEYWORD, 0)
 }
 
 func (s *CommandContext) Attribute() IAttributeContext {
@@ -1079,20 +1079,20 @@ func (s *CommandContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *CommandContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterCommand(s)
 	}
 }
 
 func (s *CommandContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitCommand(s)
 	}
 }
 
-func (p *SMTXParser) Command() (localctx ICommandContext) {
+func (p *SMTCParser) Command() (localctx ICommandContext) {
 	localctx = NewCommandContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, SMTXParserRULE_command)
+	p.EnterRule(localctx, 2, SMTCParserRULE_command)
 	var _la int
 
 	p.SetState(255)
@@ -1106,7 +1106,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(58)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1114,7 +1114,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(59)
-			p.Match(SMTXParserT__0)
+			p.Match(SMTCParserT__0)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1126,7 +1126,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(61)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1137,7 +1137,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(63)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1145,7 +1145,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(64)
-			p.Match(SMTXParserT__1)
+			p.Match(SMTCParserT__1)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1153,7 +1153,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(65)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1164,7 +1164,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(66)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1172,7 +1172,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(67)
-			p.Match(SMTXParserT__2)
+			p.Match(SMTCParserT__2)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1180,7 +1180,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(68)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1208,7 +1208,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(75)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1216,7 +1216,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(76)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1227,7 +1227,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(77)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1235,7 +1235,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(78)
-			p.Match(SMTXParserT__3)
+			p.Match(SMTCParserT__3)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1251,7 +1251,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(81)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1262,7 +1262,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(83)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1270,7 +1270,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(84)
-			p.Match(SMTXParserT__4)
+			p.Match(SMTCParserT__4)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1286,7 +1286,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(87)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1297,7 +1297,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(89)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1305,7 +1305,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(90)
-			p.Match(SMTXParserT__5)
+			p.Match(SMTCParserT__5)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1313,7 +1313,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(91)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1326,7 +1326,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(92)
 				p.Sort_dec()
@@ -1341,7 +1341,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(97)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1349,7 +1349,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(98)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1362,7 +1362,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(99)
 				p.Datatype_dec()
@@ -1377,7 +1377,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(104)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1385,7 +1385,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(105)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1396,7 +1396,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(107)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1404,7 +1404,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(108)
-			p.Match(SMTXParserT__6)
+			p.Match(SMTCParserT__6)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1416,7 +1416,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(110)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1444,7 +1444,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(117)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1456,7 +1456,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(119)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1467,7 +1467,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(121)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1475,7 +1475,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(122)
-			p.Match(SMTXParserT__7)
+			p.Match(SMTCParserT__7)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1487,7 +1487,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(124)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1495,7 +1495,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(125)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1506,7 +1506,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(127)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1514,7 +1514,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(128)
-			p.Match(SMTXParserT__8)
+			p.Match(SMTCParserT__8)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1526,7 +1526,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(130)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1537,7 +1537,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 10)
 		{
 			p.SetState(132)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1545,7 +1545,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(133)
-			p.Match(SMTXParserT__9)
+			p.Match(SMTCParserT__9)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1565,7 +1565,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(137)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1576,7 +1576,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 11)
 		{
 			p.SetState(139)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1584,7 +1584,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(140)
-			p.Match(SMTXParserT__10)
+			p.Match(SMTCParserT__10)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1596,7 +1596,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(142)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1607,7 +1607,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 12)
 		{
 			p.SetState(144)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1615,7 +1615,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(145)
-			p.Match(SMTXParserT__11)
+			p.Match(SMTCParserT__11)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1627,7 +1627,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(147)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1638,7 +1638,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 13)
 		{
 			p.SetState(149)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1646,7 +1646,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(150)
-			p.Match(SMTXParserT__12)
+			p.Match(SMTCParserT__12)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1654,7 +1654,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(151)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1667,7 +1667,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(152)
 				p.Function_dec()
@@ -1682,7 +1682,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(157)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1690,7 +1690,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(158)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1718,7 +1718,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(164)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1726,7 +1726,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(165)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1737,7 +1737,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 14)
 		{
 			p.SetState(167)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1745,7 +1745,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(168)
-			p.Match(SMTXParserT__13)
+			p.Match(SMTCParserT__13)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1757,7 +1757,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(170)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1770,7 +1770,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == SMTXParserSIMPLE_SYMBOL || _la == SMTXParserQUOTED_SYMBOL {
+		for _la == SMTCParserSIMPLE_SYMBOL || _la == SMTCParserQUOTED_SYMBOL {
 			{
 				p.SetState(171)
 				p.Symbol()
@@ -1785,7 +1785,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(177)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1797,7 +1797,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(179)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1808,7 +1808,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 15)
 		{
 			p.SetState(181)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1816,7 +1816,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(182)
-			p.Match(SMTXParserT__14)
+			p.Match(SMTCParserT__14)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1824,7 +1824,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(183)
-			p.Match(SMTXParserSTRING)
+			p.Match(SMTCParserSTRING)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1832,7 +1832,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(184)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1843,7 +1843,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 16)
 		{
 			p.SetState(185)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1851,7 +1851,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(186)
-			p.Match(SMTXParserT__15)
+			p.Match(SMTCParserT__15)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1859,7 +1859,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(187)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1870,7 +1870,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 17)
 		{
 			p.SetState(188)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1878,7 +1878,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(189)
-			p.Match(SMTXParserT__16)
+			p.Match(SMTCParserT__16)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1886,7 +1886,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(190)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1897,7 +1897,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 18)
 		{
 			p.SetState(191)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1905,7 +1905,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(192)
-			p.Match(SMTXParserT__17)
+			p.Match(SMTCParserT__17)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1913,7 +1913,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(193)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1924,7 +1924,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 19)
 		{
 			p.SetState(194)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1932,7 +1932,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(195)
-			p.Match(SMTXParserT__18)
+			p.Match(SMTCParserT__18)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1944,7 +1944,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(197)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1955,7 +1955,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 20)
 		{
 			p.SetState(199)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1963,7 +1963,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(200)
-			p.Match(SMTXParserT__19)
+			p.Match(SMTCParserT__19)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1971,7 +1971,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(201)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1982,7 +1982,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 21)
 		{
 			p.SetState(202)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1990,7 +1990,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(203)
-			p.Match(SMTXParserT__20)
+			p.Match(SMTCParserT__20)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -1998,7 +1998,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(204)
-			p.Match(SMTXParserKEYWORD)
+			p.Match(SMTCParserKEYWORD)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2006,7 +2006,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(205)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2017,7 +2017,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 22)
 		{
 			p.SetState(206)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2025,7 +2025,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(207)
-			p.Match(SMTXParserT__21)
+			p.Match(SMTCParserT__21)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2033,7 +2033,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(208)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2044,7 +2044,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 23)
 		{
 			p.SetState(209)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2052,7 +2052,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(210)
-			p.Match(SMTXParserT__22)
+			p.Match(SMTCParserT__22)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2060,7 +2060,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(211)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2071,7 +2071,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 24)
 		{
 			p.SetState(212)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2079,7 +2079,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(213)
-			p.Match(SMTXParserT__23)
+			p.Match(SMTCParserT__23)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2087,7 +2087,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(214)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2098,7 +2098,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 25)
 		{
 			p.SetState(215)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2106,7 +2106,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(216)
-			p.Match(SMTXParserT__24)
+			p.Match(SMTCParserT__24)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2114,7 +2114,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(217)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2142,7 +2142,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(223)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2150,7 +2150,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(224)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2161,7 +2161,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 26)
 		{
 			p.SetState(226)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2169,7 +2169,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(227)
-			p.Match(SMTXParserT__25)
+			p.Match(SMTCParserT__25)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2177,7 +2177,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(228)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2185,7 +2185,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(229)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2196,7 +2196,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 27)
 		{
 			p.SetState(230)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2204,7 +2204,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(231)
-			p.Match(SMTXParserT__26)
+			p.Match(SMTCParserT__26)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2212,7 +2212,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(232)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2220,7 +2220,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(233)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2231,7 +2231,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 28)
 		{
 			p.SetState(234)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2239,7 +2239,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(235)
-			p.Match(SMTXParserT__27)
+			p.Match(SMTCParserT__27)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2247,7 +2247,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(236)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2258,7 +2258,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 29)
 		{
 			p.SetState(237)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2266,7 +2266,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(238)
-			p.Match(SMTXParserT__28)
+			p.Match(SMTCParserT__28)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2274,7 +2274,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(239)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2285,7 +2285,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 30)
 		{
 			p.SetState(240)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2293,7 +2293,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(241)
-			p.Match(SMTXParserT__29)
+			p.Match(SMTCParserT__29)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2305,7 +2305,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(243)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2316,7 +2316,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 31)
 		{
 			p.SetState(245)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2324,7 +2324,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(246)
-			p.Match(SMTXParserT__30)
+			p.Match(SMTCParserT__30)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2336,7 +2336,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(248)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2347,7 +2347,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		p.EnterOuterAlt(localctx, 32)
 		{
 			p.SetState(250)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2355,7 +2355,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(251)
-			p.Match(SMTXParserT__31)
+			p.Match(SMTCParserT__31)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2367,7 +2367,7 @@ func (p *SMTXParser) Command() (localctx ICommandContext) {
 		}
 		{
 			p.SetState(253)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2414,13 +2414,13 @@ type SymbolContext struct {
 func NewEmptySymbolContext() *SymbolContext {
 	var p = new(SymbolContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_symbol
+	p.RuleIndex = SMTCParserRULE_symbol
 	return p
 }
 
 func InitEmptySymbolContext(p *SymbolContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_symbol
+	p.RuleIndex = SMTCParserRULE_symbol
 }
 
 func (*SymbolContext) IsSymbolContext() {}
@@ -2431,7 +2431,7 @@ func NewSymbolContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_symbol
+	p.RuleIndex = SMTCParserRULE_symbol
 
 	return p
 }
@@ -2439,11 +2439,11 @@ func NewSymbolContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 func (s *SymbolContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *SymbolContext) SIMPLE_SYMBOL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserSIMPLE_SYMBOL, 0)
+	return s.GetToken(SMTCParserSIMPLE_SYMBOL, 0)
 }
 
 func (s *SymbolContext) QUOTED_SYMBOL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserQUOTED_SYMBOL, 0)
+	return s.GetToken(SMTCParserQUOTED_SYMBOL, 0)
 }
 
 func (s *SymbolContext) GetRuleContext() antlr.RuleContext {
@@ -2455,20 +2455,20 @@ func (s *SymbolContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 }
 
 func (s *SymbolContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSymbol(s)
 	}
 }
 
 func (s *SymbolContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSymbol(s)
 	}
 }
 
-func (p *SMTXParser) Symbol() (localctx ISymbolContext) {
+func (p *SMTCParser) Symbol() (localctx ISymbolContext) {
 	localctx = NewSymbolContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, SMTXParserRULE_symbol)
+	p.EnterRule(localctx, 4, SMTCParserRULE_symbol)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -2476,7 +2476,7 @@ func (p *SMTXParser) Symbol() (localctx ISymbolContext) {
 		p.SetState(257)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SMTXParserSIMPLE_SYMBOL || _la == SMTXParserQUOTED_SYMBOL) {
+		if !(_la == SMTCParserSIMPLE_SYMBOL || _la == SMTCParserQUOTED_SYMBOL) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -2523,13 +2523,13 @@ type SortContext struct {
 func NewEmptySortContext() *SortContext {
 	var p = new(SortContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sort
+	p.RuleIndex = SMTCParserRULE_sort
 	return p
 }
 
 func InitEmptySortContext(p *SortContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sort
+	p.RuleIndex = SMTCParserRULE_sort
 }
 
 func (*SortContext) IsSortContext() {}
@@ -2540,7 +2540,7 @@ func NewSortContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_sort
+	p.RuleIndex = SMTCParserRULE_sort
 
 	return p
 }
@@ -2564,11 +2564,11 @@ func (s *SortContext) Identifier() IIdentifierContext {
 }
 
 func (s *SortContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *SortContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *SortContext) AllSort() []ISortContext {
@@ -2621,20 +2621,20 @@ func (s *SortContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *SortContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSort(s)
 	}
 }
 
 func (s *SortContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSort(s)
 	}
 }
 
-func (p *SMTXParser) Sort() (localctx ISortContext) {
+func (p *SMTCParser) Sort() (localctx ISortContext) {
 	localctx = NewSortContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, SMTXParserRULE_sort)
+	p.EnterRule(localctx, 6, SMTCParserRULE_sort)
 	var _la int
 
 	p.SetState(269)
@@ -2655,7 +2655,7 @@ func (p *SMTXParser) Sort() (localctx ISortContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(260)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2687,7 +2687,7 @@ func (p *SMTXParser) Sort() (localctx ISortContext) {
 		}
 		{
 			p.SetState(267)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -2736,13 +2736,13 @@ type Sort_decContext struct {
 func NewEmptySort_decContext() *Sort_decContext {
 	var p = new(Sort_decContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sort_dec
+	p.RuleIndex = SMTCParserRULE_sort_dec
 	return p
 }
 
 func InitEmptySort_decContext(p *Sort_decContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sort_dec
+	p.RuleIndex = SMTCParserRULE_sort_dec
 }
 
 func (*Sort_decContext) IsSort_decContext() {}
@@ -2753,7 +2753,7 @@ func NewSort_decContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_sort_dec
+	p.RuleIndex = SMTCParserRULE_sort_dec
 
 	return p
 }
@@ -2761,7 +2761,7 @@ func NewSort_decContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *Sort_decContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Sort_decContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Sort_decContext) Symbol() ISymbolContext {
@@ -2781,11 +2781,11 @@ func (s *Sort_decContext) Symbol() ISymbolContext {
 }
 
 func (s *Sort_decContext) NUMERAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserNUMERAL, 0)
+	return s.GetToken(SMTCParserNUMERAL, 0)
 }
 
 func (s *Sort_decContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Sort_decContext) GetRuleContext() antlr.RuleContext {
@@ -2797,24 +2797,24 @@ func (s *Sort_decContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 }
 
 func (s *Sort_decContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSort_dec(s)
 	}
 }
 
 func (s *Sort_decContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSort_dec(s)
 	}
 }
 
-func (p *SMTXParser) Sort_dec() (localctx ISort_decContext) {
+func (p *SMTCParser) Sort_dec() (localctx ISort_decContext) {
 	localctx = NewSort_decContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, SMTXParserRULE_sort_dec)
+	p.EnterRule(localctx, 8, SMTCParserRULE_sort_dec)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(271)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -2826,7 +2826,7 @@ func (p *SMTXParser) Sort_dec() (localctx ISort_decContext) {
 	}
 	{
 		p.SetState(273)
-		p.Match(SMTXParserNUMERAL)
+		p.Match(SMTCParserNUMERAL)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -2834,7 +2834,7 @@ func (p *SMTXParser) Sort_dec() (localctx ISort_decContext) {
 	}
 	{
 		p.SetState(274)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -2879,13 +2879,13 @@ type Selector_decContext struct {
 func NewEmptySelector_decContext() *Selector_decContext {
 	var p = new(Selector_decContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_selector_dec
+	p.RuleIndex = SMTCParserRULE_selector_dec
 	return p
 }
 
 func InitEmptySelector_decContext(p *Selector_decContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_selector_dec
+	p.RuleIndex = SMTCParserRULE_selector_dec
 }
 
 func (*Selector_decContext) IsSelector_decContext() {}
@@ -2896,7 +2896,7 @@ func NewSelector_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_selector_dec
+	p.RuleIndex = SMTCParserRULE_selector_dec
 
 	return p
 }
@@ -2904,7 +2904,7 @@ func NewSelector_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *Selector_decContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Selector_decContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Selector_decContext) Symbol() ISymbolContext {
@@ -2940,7 +2940,7 @@ func (s *Selector_decContext) Sort() ISortContext {
 }
 
 func (s *Selector_decContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Selector_decContext) GetRuleContext() antlr.RuleContext {
@@ -2952,24 +2952,24 @@ func (s *Selector_decContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Selector_decContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSelector_dec(s)
 	}
 }
 
 func (s *Selector_decContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSelector_dec(s)
 	}
 }
 
-func (p *SMTXParser) Selector_dec() (localctx ISelector_decContext) {
+func (p *SMTCParser) Selector_dec() (localctx ISelector_decContext) {
 	localctx = NewSelector_decContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, SMTXParserRULE_selector_dec)
+	p.EnterRule(localctx, 10, SMTCParserRULE_selector_dec)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(276)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -2985,7 +2985,7 @@ func (p *SMTXParser) Selector_dec() (localctx ISelector_decContext) {
 	}
 	{
 		p.SetState(279)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3031,13 +3031,13 @@ type Constructor_decContext struct {
 func NewEmptyConstructor_decContext() *Constructor_decContext {
 	var p = new(Constructor_decContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_constructor_dec
+	p.RuleIndex = SMTCParserRULE_constructor_dec
 	return p
 }
 
 func InitEmptyConstructor_decContext(p *Constructor_decContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_constructor_dec
+	p.RuleIndex = SMTCParserRULE_constructor_dec
 }
 
 func (*Constructor_decContext) IsConstructor_decContext() {}
@@ -3048,7 +3048,7 @@ func NewConstructor_decContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_constructor_dec
+	p.RuleIndex = SMTCParserRULE_constructor_dec
 
 	return p
 }
@@ -3056,7 +3056,7 @@ func NewConstructor_decContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *Constructor_decContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Constructor_decContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Constructor_decContext) Symbol() ISymbolContext {
@@ -3076,7 +3076,7 @@ func (s *Constructor_decContext) Symbol() ISymbolContext {
 }
 
 func (s *Constructor_decContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Constructor_decContext) AllSelector_dec() []ISelector_decContext {
@@ -3129,26 +3129,26 @@ func (s *Constructor_decContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *Constructor_decContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterConstructor_dec(s)
 	}
 }
 
 func (s *Constructor_decContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitConstructor_dec(s)
 	}
 }
 
-func (p *SMTXParser) Constructor_dec() (localctx IConstructor_decContext) {
+func (p *SMTCParser) Constructor_dec() (localctx IConstructor_decContext) {
 	localctx = NewConstructor_decContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, SMTXParserRULE_constructor_dec)
+	p.EnterRule(localctx, 12, SMTCParserRULE_constructor_dec)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(281)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3165,7 +3165,7 @@ func (p *SMTXParser) Constructor_dec() (localctx IConstructor_decContext) {
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == SMTXParserPAROPEN {
+	for _la == SMTCParserPAROPEN {
 		{
 			p.SetState(283)
 			p.Selector_dec()
@@ -3180,7 +3180,7 @@ func (p *SMTXParser) Constructor_dec() (localctx IConstructor_decContext) {
 	}
 	{
 		p.SetState(289)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3229,13 +3229,13 @@ type Datatype_decContext struct {
 func NewEmptyDatatype_decContext() *Datatype_decContext {
 	var p = new(Datatype_decContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_datatype_dec
+	p.RuleIndex = SMTCParserRULE_datatype_dec
 	return p
 }
 
 func InitEmptyDatatype_decContext(p *Datatype_decContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_datatype_dec
+	p.RuleIndex = SMTCParserRULE_datatype_dec
 }
 
 func (*Datatype_decContext) IsDatatype_decContext() {}
@@ -3246,7 +3246,7 @@ func NewDatatype_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_datatype_dec
+	p.RuleIndex = SMTCParserRULE_datatype_dec
 
 	return p
 }
@@ -3254,19 +3254,19 @@ func NewDatatype_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *Datatype_decContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Datatype_decContext) AllPAROPEN() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPAROPEN)
+	return s.GetTokens(SMTCParserPAROPEN)
 }
 
 func (s *Datatype_decContext) PAROPEN(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, i)
+	return s.GetToken(SMTCParserPAROPEN, i)
 }
 
 func (s *Datatype_decContext) AllPARCLOSE() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPARCLOSE)
+	return s.GetTokens(SMTCParserPARCLOSE)
 }
 
 func (s *Datatype_decContext) PARCLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, i)
+	return s.GetToken(SMTCParserPARCLOSE, i)
 }
 
 func (s *Datatype_decContext) AllConstructor_dec() []IConstructor_decContext {
@@ -3360,20 +3360,20 @@ func (s *Datatype_decContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Datatype_decContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterDatatype_dec(s)
 	}
 }
 
 func (s *Datatype_decContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitDatatype_dec(s)
 	}
 }
 
-func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
+func (p *SMTCParser) Datatype_dec() (localctx IDatatype_decContext) {
 	localctx = NewDatatype_decContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, SMTXParserRULE_datatype_dec)
+	p.EnterRule(localctx, 14, SMTCParserRULE_datatype_dec)
 	var _la int
 
 	p.SetState(317)
@@ -3387,7 +3387,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(291)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3400,7 +3400,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(292)
 				p.Constructor_dec()
@@ -3415,7 +3415,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(297)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3426,7 +3426,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(299)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3434,7 +3434,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(300)
-			p.Match(SMTXParserT__32)
+			p.Match(SMTCParserT__32)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3442,7 +3442,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(301)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3455,7 +3455,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserSIMPLE_SYMBOL || _la == SMTXParserQUOTED_SYMBOL {
+		for ok := true; ok; ok = _la == SMTCParserSIMPLE_SYMBOL || _la == SMTCParserQUOTED_SYMBOL {
 			{
 				p.SetState(302)
 				p.Symbol()
@@ -3470,7 +3470,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(307)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3478,7 +3478,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(308)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3491,7 +3491,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(309)
 				p.Constructor_dec()
@@ -3506,7 +3506,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(314)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3514,7 +3514,7 @@ func (p *SMTXParser) Datatype_dec() (localctx IDatatype_decContext) {
 		}
 		{
 			p.SetState(315)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -3567,13 +3567,13 @@ type Function_decContext struct {
 func NewEmptyFunction_decContext() *Function_decContext {
 	var p = new(Function_decContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_function_dec
+	p.RuleIndex = SMTCParserRULE_function_dec
 	return p
 }
 
 func InitEmptyFunction_decContext(p *Function_decContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_function_dec
+	p.RuleIndex = SMTCParserRULE_function_dec
 }
 
 func (*Function_decContext) IsFunction_decContext() {}
@@ -3584,7 +3584,7 @@ func NewFunction_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_function_dec
+	p.RuleIndex = SMTCParserRULE_function_dec
 
 	return p
 }
@@ -3592,11 +3592,11 @@ func NewFunction_decContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *Function_decContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Function_decContext) AllPAROPEN() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPAROPEN)
+	return s.GetTokens(SMTCParserPAROPEN)
 }
 
 func (s *Function_decContext) PAROPEN(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, i)
+	return s.GetToken(SMTCParserPAROPEN, i)
 }
 
 func (s *Function_decContext) Symbol() ISymbolContext {
@@ -3616,11 +3616,11 @@ func (s *Function_decContext) Symbol() ISymbolContext {
 }
 
 func (s *Function_decContext) AllPARCLOSE() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPARCLOSE)
+	return s.GetTokens(SMTCParserPARCLOSE)
 }
 
 func (s *Function_decContext) PARCLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, i)
+	return s.GetToken(SMTCParserPARCLOSE, i)
 }
 
 func (s *Function_decContext) Sort() ISortContext {
@@ -3689,26 +3689,26 @@ func (s *Function_decContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Function_decContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterFunction_dec(s)
 	}
 }
 
 func (s *Function_decContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitFunction_dec(s)
 	}
 }
 
-func (p *SMTXParser) Function_dec() (localctx IFunction_decContext) {
+func (p *SMTCParser) Function_dec() (localctx IFunction_decContext) {
 	localctx = NewFunction_decContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, SMTXParserRULE_function_dec)
+	p.EnterRule(localctx, 16, SMTCParserRULE_function_dec)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(319)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3720,7 +3720,7 @@ func (p *SMTXParser) Function_dec() (localctx IFunction_decContext) {
 	}
 	{
 		p.SetState(321)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3733,7 +3733,7 @@ func (p *SMTXParser) Function_dec() (localctx IFunction_decContext) {
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == SMTXParserPAROPEN {
+	for _la == SMTCParserPAROPEN {
 		{
 			p.SetState(322)
 			p.Sorted_var()
@@ -3748,7 +3748,7 @@ func (p *SMTXParser) Function_dec() (localctx IFunction_decContext) {
 	}
 	{
 		p.SetState(328)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3760,7 +3760,7 @@ func (p *SMTXParser) Function_dec() (localctx IFunction_decContext) {
 	}
 	{
 		p.SetState(330)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3808,13 +3808,13 @@ type Function_defContext struct {
 func NewEmptyFunction_defContext() *Function_defContext {
 	var p = new(Function_defContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_function_def
+	p.RuleIndex = SMTCParserRULE_function_def
 	return p
 }
 
 func InitEmptyFunction_defContext(p *Function_defContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_function_def
+	p.RuleIndex = SMTCParserRULE_function_def
 }
 
 func (*Function_defContext) IsFunction_defContext() {}
@@ -3825,7 +3825,7 @@ func NewFunction_defContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_function_def
+	p.RuleIndex = SMTCParserRULE_function_def
 
 	return p
 }
@@ -3849,11 +3849,11 @@ func (s *Function_defContext) Symbol() ISymbolContext {
 }
 
 func (s *Function_defContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Function_defContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Function_defContext) Sort() ISortContext {
@@ -3938,20 +3938,20 @@ func (s *Function_defContext) ToStringTree(ruleNames []string, recog antlr.Recog
 }
 
 func (s *Function_defContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterFunction_def(s)
 	}
 }
 
 func (s *Function_defContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitFunction_def(s)
 	}
 }
 
-func (p *SMTXParser) Function_def() (localctx IFunction_defContext) {
+func (p *SMTCParser) Function_def() (localctx IFunction_defContext) {
 	localctx = NewFunction_defContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, SMTXParserRULE_function_def)
+	p.EnterRule(localctx, 18, SMTCParserRULE_function_def)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -3961,7 +3961,7 @@ func (p *SMTXParser) Function_def() (localctx IFunction_defContext) {
 	}
 	{
 		p.SetState(333)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -3974,7 +3974,7 @@ func (p *SMTXParser) Function_def() (localctx IFunction_defContext) {
 	}
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == SMTXParserPAROPEN {
+	for _la == SMTCParserPAROPEN {
 		{
 			p.SetState(334)
 			p.Sorted_var()
@@ -3989,7 +3989,7 @@ func (p *SMTXParser) Function_def() (localctx IFunction_defContext) {
 	}
 	{
 		p.SetState(340)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -4054,13 +4054,13 @@ type TermContext struct {
 func NewEmptyTermContext() *TermContext {
 	var p = new(TermContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_term
+	p.RuleIndex = SMTCParserRULE_term
 	return p
 }
 
 func InitEmptyTermContext(p *TermContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_term
+	p.RuleIndex = SMTCParserRULE_term
 }
 
 func (*TermContext) IsTermContext() {}
@@ -4071,7 +4071,7 @@ func NewTermContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_term
+	p.RuleIndex = SMTCParserRULE_term
 
 	return p
 }
@@ -4111,19 +4111,19 @@ func (s *TermContext) Qual_identifier() IQual_identifierContext {
 }
 
 func (s *TermContext) AllPAROPEN() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPAROPEN)
+	return s.GetTokens(SMTCParserPAROPEN)
 }
 
 func (s *TermContext) PAROPEN(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, i)
+	return s.GetToken(SMTCParserPAROPEN, i)
 }
 
 func (s *TermContext) AllPARCLOSE() []antlr.TerminalNode {
-	return s.GetTokens(SMTXParserPARCLOSE)
+	return s.GetTokens(SMTCParserPARCLOSE)
 }
 
 func (s *TermContext) PARCLOSE(i int) antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, i)
+	return s.GetToken(SMTCParserPARCLOSE, i)
 }
 
 func (s *TermContext) AllTerm() []ITermContext {
@@ -4340,20 +4340,20 @@ func (s *TermContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 }
 
 func (s *TermContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterTerm(s)
 	}
 }
 
 func (s *TermContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitTerm(s)
 	}
 }
 
-func (p *SMTXParser) Term() (localctx ITermContext) {
+func (p *SMTCParser) Term() (localctx ITermContext) {
 	localctx = NewTermContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, SMTXParserRULE_term)
+	p.EnterRule(localctx, 20, SMTCParserRULE_term)
 	var _la int
 
 	p.SetState(425)
@@ -4381,7 +4381,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(346)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4413,7 +4413,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(353)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4424,7 +4424,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(355)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4432,7 +4432,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(356)
-			p.Match(SMTXParserT__33)
+			p.Match(SMTCParserT__33)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4440,7 +4440,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(357)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4453,7 +4453,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(358)
 				p.Var_binding()
@@ -4468,7 +4468,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(363)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4480,7 +4480,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(365)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4491,7 +4491,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(367)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4499,7 +4499,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(368)
-			p.Match(SMTXParserT__34)
+			p.Match(SMTCParserT__34)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4507,7 +4507,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(369)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4520,7 +4520,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(370)
 				p.Sorted_var()
@@ -4535,7 +4535,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(375)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4547,7 +4547,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(377)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4558,7 +4558,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(379)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4566,7 +4566,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(380)
-			p.Match(SMTXParserT__35)
+			p.Match(SMTCParserT__35)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4574,7 +4574,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(381)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4587,7 +4587,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(382)
 				p.Sorted_var()
@@ -4602,7 +4602,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(387)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4614,7 +4614,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(389)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4625,7 +4625,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(391)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4633,7 +4633,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(392)
-			p.Match(SMTXParserT__36)
+			p.Match(SMTCParserT__36)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4641,7 +4641,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(393)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4654,7 +4654,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(394)
 				p.Sorted_var()
@@ -4669,7 +4669,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(399)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4681,7 +4681,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(401)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4692,7 +4692,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(403)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4700,7 +4700,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(404)
-			p.Match(SMTXParserT__37)
+			p.Match(SMTCParserT__37)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4712,7 +4712,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(406)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4725,7 +4725,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserPAROPEN {
+		for ok := true; ok; ok = _la == SMTCParserPAROPEN {
 			{
 				p.SetState(407)
 				p.Match_case()
@@ -4740,7 +4740,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(412)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4748,7 +4748,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(413)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4759,7 +4759,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(415)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4767,7 +4767,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(416)
-			p.Match(SMTXParserT__38)
+			p.Match(SMTCParserT__38)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4784,7 +4784,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = _la == SMTXParserKEYWORD {
+		for ok := true; ok; ok = _la == SMTCParserKEYWORD {
 			{
 				p.SetState(418)
 				p.Attribute()
@@ -4799,7 +4799,7 @@ func (p *SMTXParser) Term() (localctx ITermContext) {
 		}
 		{
 			p.SetState(423)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -4849,13 +4849,13 @@ type Spec_constantContext struct {
 func NewEmptySpec_constantContext() *Spec_constantContext {
 	var p = new(Spec_constantContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_spec_constant
+	p.RuleIndex = SMTCParserRULE_spec_constant
 	return p
 }
 
 func InitEmptySpec_constantContext(p *Spec_constantContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_spec_constant
+	p.RuleIndex = SMTCParserRULE_spec_constant
 }
 
 func (*Spec_constantContext) IsSpec_constantContext() {}
@@ -4866,7 +4866,7 @@ func NewSpec_constantContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_spec_constant
+	p.RuleIndex = SMTCParserRULE_spec_constant
 
 	return p
 }
@@ -4874,23 +4874,23 @@ func NewSpec_constantContext(parser antlr.Parser, parent antlr.ParserRuleContext
 func (s *Spec_constantContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Spec_constantContext) NUMERAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserNUMERAL, 0)
+	return s.GetToken(SMTCParserNUMERAL, 0)
 }
 
 func (s *Spec_constantContext) DECIMAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserDECIMAL, 0)
+	return s.GetToken(SMTCParserDECIMAL, 0)
 }
 
 func (s *Spec_constantContext) HEXADECIMAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserHEXADECIMAL, 0)
+	return s.GetToken(SMTCParserHEXADECIMAL, 0)
 }
 
 func (s *Spec_constantContext) BINARY() antlr.TerminalNode {
-	return s.GetToken(SMTXParserBINARY, 0)
+	return s.GetToken(SMTCParserBINARY, 0)
 }
 
 func (s *Spec_constantContext) STRING() antlr.TerminalNode {
-	return s.GetToken(SMTXParserSTRING, 0)
+	return s.GetToken(SMTCParserSTRING, 0)
 }
 
 func (s *Spec_constantContext) GetRuleContext() antlr.RuleContext {
@@ -4902,20 +4902,20 @@ func (s *Spec_constantContext) ToStringTree(ruleNames []string, recog antlr.Reco
 }
 
 func (s *Spec_constantContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSpec_constant(s)
 	}
 }
 
 func (s *Spec_constantContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSpec_constant(s)
 	}
 }
 
-func (p *SMTXParser) Spec_constant() (localctx ISpec_constantContext) {
+func (p *SMTCParser) Spec_constant() (localctx ISpec_constantContext) {
 	localctx = NewSpec_constantContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, SMTXParserRULE_spec_constant)
+	p.EnterRule(localctx, 22, SMTCParserRULE_spec_constant)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -4969,13 +4969,13 @@ type Qual_identifierContext struct {
 func NewEmptyQual_identifierContext() *Qual_identifierContext {
 	var p = new(Qual_identifierContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_qual_identifier
+	p.RuleIndex = SMTCParserRULE_qual_identifier
 	return p
 }
 
 func InitEmptyQual_identifierContext(p *Qual_identifierContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_qual_identifier
+	p.RuleIndex = SMTCParserRULE_qual_identifier
 }
 
 func (*Qual_identifierContext) IsQual_identifierContext() {}
@@ -4986,7 +4986,7 @@ func NewQual_identifierContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_qual_identifier
+	p.RuleIndex = SMTCParserRULE_qual_identifier
 
 	return p
 }
@@ -5010,7 +5010,7 @@ func (s *Qual_identifierContext) Identifier() IIdentifierContext {
 }
 
 func (s *Qual_identifierContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Qual_identifierContext) Sort() ISortContext {
@@ -5030,7 +5030,7 @@ func (s *Qual_identifierContext) Sort() ISortContext {
 }
 
 func (s *Qual_identifierContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Qual_identifierContext) GetRuleContext() antlr.RuleContext {
@@ -5042,20 +5042,20 @@ func (s *Qual_identifierContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *Qual_identifierContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterQual_identifier(s)
 	}
 }
 
 func (s *Qual_identifierContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitQual_identifier(s)
 	}
 }
 
-func (p *SMTXParser) Qual_identifier() (localctx IQual_identifierContext) {
+func (p *SMTCParser) Qual_identifier() (localctx IQual_identifierContext) {
 	localctx = NewQual_identifierContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, SMTXParserRULE_qual_identifier)
+	p.EnterRule(localctx, 24, SMTCParserRULE_qual_identifier)
 	p.SetState(436)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
@@ -5074,7 +5074,7 @@ func (p *SMTXParser) Qual_identifier() (localctx IQual_identifierContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(430)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5082,7 +5082,7 @@ func (p *SMTXParser) Qual_identifier() (localctx IQual_identifierContext) {
 		}
 		{
 			p.SetState(431)
-			p.Match(SMTXParserT__39)
+			p.Match(SMTCParserT__39)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5098,7 +5098,7 @@ func (p *SMTXParser) Qual_identifier() (localctx IQual_identifierContext) {
 		}
 		{
 			p.SetState(434)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5147,13 +5147,13 @@ type Var_bindingContext struct {
 func NewEmptyVar_bindingContext() *Var_bindingContext {
 	var p = new(Var_bindingContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_var_binding
+	p.RuleIndex = SMTCParserRULE_var_binding
 	return p
 }
 
 func InitEmptyVar_bindingContext(p *Var_bindingContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_var_binding
+	p.RuleIndex = SMTCParserRULE_var_binding
 }
 
 func (*Var_bindingContext) IsVar_bindingContext() {}
@@ -5164,7 +5164,7 @@ func NewVar_bindingContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_var_binding
+	p.RuleIndex = SMTCParserRULE_var_binding
 
 	return p
 }
@@ -5172,7 +5172,7 @@ func NewVar_bindingContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Var_bindingContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Var_bindingContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Var_bindingContext) Symbol() ISymbolContext {
@@ -5208,7 +5208,7 @@ func (s *Var_bindingContext) Term() ITermContext {
 }
 
 func (s *Var_bindingContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Var_bindingContext) GetRuleContext() antlr.RuleContext {
@@ -5220,24 +5220,24 @@ func (s *Var_bindingContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 }
 
 func (s *Var_bindingContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterVar_binding(s)
 	}
 }
 
 func (s *Var_bindingContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitVar_binding(s)
 	}
 }
 
-func (p *SMTXParser) Var_binding() (localctx IVar_bindingContext) {
+func (p *SMTCParser) Var_binding() (localctx IVar_bindingContext) {
 	localctx = NewVar_bindingContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, SMTXParserRULE_var_binding)
+	p.EnterRule(localctx, 26, SMTCParserRULE_var_binding)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(438)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5253,7 +5253,7 @@ func (p *SMTXParser) Var_binding() (localctx IVar_bindingContext) {
 	}
 	{
 		p.SetState(441)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5298,13 +5298,13 @@ type Sorted_varContext struct {
 func NewEmptySorted_varContext() *Sorted_varContext {
 	var p = new(Sorted_varContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sorted_var
+	p.RuleIndex = SMTCParserRULE_sorted_var
 	return p
 }
 
 func InitEmptySorted_varContext(p *Sorted_varContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_sorted_var
+	p.RuleIndex = SMTCParserRULE_sorted_var
 }
 
 func (*Sorted_varContext) IsSorted_varContext() {}
@@ -5315,7 +5315,7 @@ func NewSorted_varContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_sorted_var
+	p.RuleIndex = SMTCParserRULE_sorted_var
 
 	return p
 }
@@ -5323,7 +5323,7 @@ func NewSorted_varContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *Sorted_varContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Sorted_varContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Sorted_varContext) Symbol() ISymbolContext {
@@ -5359,7 +5359,7 @@ func (s *Sorted_varContext) Sort() ISortContext {
 }
 
 func (s *Sorted_varContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Sorted_varContext) GetRuleContext() antlr.RuleContext {
@@ -5371,24 +5371,24 @@ func (s *Sorted_varContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *Sorted_varContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSorted_var(s)
 	}
 }
 
 func (s *Sorted_varContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSorted_var(s)
 	}
 }
 
-func (p *SMTXParser) Sorted_var() (localctx ISorted_varContext) {
+func (p *SMTCParser) Sorted_var() (localctx ISorted_varContext) {
 	localctx = NewSorted_varContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, SMTXParserRULE_sorted_var)
+	p.EnterRule(localctx, 28, SMTCParserRULE_sorted_var)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(443)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5404,7 +5404,7 @@ func (p *SMTXParser) Sorted_var() (localctx ISorted_varContext) {
 	}
 	{
 		p.SetState(446)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5450,13 +5450,13 @@ type PatternContext struct {
 func NewEmptyPatternContext() *PatternContext {
 	var p = new(PatternContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_pattern
+	p.RuleIndex = SMTCParserRULE_pattern
 	return p
 }
 
 func InitEmptyPatternContext(p *PatternContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_pattern
+	p.RuleIndex = SMTCParserRULE_pattern
 }
 
 func (*PatternContext) IsPatternContext() {}
@@ -5467,7 +5467,7 @@ func NewPatternContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_pattern
+	p.RuleIndex = SMTCParserRULE_pattern
 
 	return p
 }
@@ -5516,7 +5516,7 @@ func (s *PatternContext) Symbol_(i int) ISymbol_Context {
 }
 
 func (s *PatternContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *PatternContext) Symbol() ISymbolContext {
@@ -5536,7 +5536,7 @@ func (s *PatternContext) Symbol() ISymbolContext {
 }
 
 func (s *PatternContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *PatternContext) GetRuleContext() antlr.RuleContext {
@@ -5548,20 +5548,20 @@ func (s *PatternContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *PatternContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterPattern(s)
 	}
 }
 
 func (s *PatternContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitPattern(s)
 	}
 }
 
-func (p *SMTXParser) Pattern() (localctx IPatternContext) {
+func (p *SMTCParser) Pattern() (localctx IPatternContext) {
 	localctx = NewPatternContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, SMTXParserRULE_pattern)
+	p.EnterRule(localctx, 30, SMTCParserRULE_pattern)
 	var _la int
 
 	p.SetState(458)
@@ -5571,18 +5571,18 @@ func (p *SMTXParser) Pattern() (localctx IPatternContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserT__40, SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserT__40, SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(448)
 			p.Symbol_()
 		}
 
-	case SMTXParserPAROPEN:
+	case SMTCParserPAROPEN:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(449)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5614,7 +5614,7 @@ func (p *SMTXParser) Pattern() (localctx IPatternContext) {
 		}
 		{
 			p.SetState(456)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5661,13 +5661,13 @@ type Symbol_Context struct {
 func NewEmptySymbol_Context() *Symbol_Context {
 	var p = new(Symbol_Context)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_symbol_
+	p.RuleIndex = SMTCParserRULE_symbol_
 	return p
 }
 
 func InitEmptySymbol_Context(p *Symbol_Context) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_symbol_
+	p.RuleIndex = SMTCParserRULE_symbol_
 }
 
 func (*Symbol_Context) IsSymbol_Context() {}
@@ -5678,7 +5678,7 @@ func NewSymbol_Context(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_symbol_
+	p.RuleIndex = SMTCParserRULE_symbol_
 
 	return p
 }
@@ -5710,20 +5710,20 @@ func (s *Symbol_Context) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *Symbol_Context) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterSymbol_(s)
 	}
 }
 
 func (s *Symbol_Context) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitSymbol_(s)
 	}
 }
 
-func (p *SMTXParser) Symbol_() (localctx ISymbol_Context) {
+func (p *SMTCParser) Symbol_() (localctx ISymbol_Context) {
 	localctx = NewSymbol_Context(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, SMTXParserRULE_symbol_)
+	p.EnterRule(localctx, 32, SMTCParserRULE_symbol_)
 	p.SetState(462)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
@@ -5731,18 +5731,18 @@ func (p *SMTXParser) Symbol_() (localctx ISymbol_Context) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(460)
 			p.Symbol()
 		}
 
-	case SMTXParserT__40:
+	case SMTCParserT__40:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(461)
-			p.Match(SMTXParserT__40)
+			p.Match(SMTCParserT__40)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -5792,13 +5792,13 @@ type Match_caseContext struct {
 func NewEmptyMatch_caseContext() *Match_caseContext {
 	var p = new(Match_caseContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_match_case
+	p.RuleIndex = SMTCParserRULE_match_case
 	return p
 }
 
 func InitEmptyMatch_caseContext(p *Match_caseContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_match_case
+	p.RuleIndex = SMTCParserRULE_match_case
 }
 
 func (*Match_caseContext) IsMatch_caseContext() {}
@@ -5809,7 +5809,7 @@ func NewMatch_caseContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_match_case
+	p.RuleIndex = SMTCParserRULE_match_case
 
 	return p
 }
@@ -5817,7 +5817,7 @@ func NewMatch_caseContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *Match_caseContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Match_caseContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Match_caseContext) Pattern() IPatternContext {
@@ -5853,7 +5853,7 @@ func (s *Match_caseContext) Term() ITermContext {
 }
 
 func (s *Match_caseContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Match_caseContext) GetRuleContext() antlr.RuleContext {
@@ -5865,24 +5865,24 @@ func (s *Match_caseContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *Match_caseContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterMatch_case(s)
 	}
 }
 
 func (s *Match_caseContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitMatch_case(s)
 	}
 }
 
-func (p *SMTXParser) Match_case() (localctx IMatch_caseContext) {
+func (p *SMTCParser) Match_case() (localctx IMatch_caseContext) {
 	localctx = NewMatch_caseContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, SMTXParserRULE_match_case)
+	p.EnterRule(localctx, 34, SMTCParserRULE_match_case)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(464)
-		p.Match(SMTXParserPAROPEN)
+		p.Match(SMTCParserPAROPEN)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5898,7 +5898,7 @@ func (p *SMTXParser) Match_case() (localctx IMatch_caseContext) {
 	}
 	{
 		p.SetState(467)
-		p.Match(SMTXParserPARCLOSE)
+		p.Match(SMTCParserPARCLOSE)
 		if p.HasError() {
 			// Recognition error - abort rule
 			goto errorExit
@@ -5944,13 +5944,13 @@ type IdentifierContext struct {
 func NewEmptyIdentifierContext() *IdentifierContext {
 	var p = new(IdentifierContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_identifier
+	p.RuleIndex = SMTCParserRULE_identifier
 	return p
 }
 
 func InitEmptyIdentifierContext(p *IdentifierContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_identifier
+	p.RuleIndex = SMTCParserRULE_identifier
 }
 
 func (*IdentifierContext) IsIdentifierContext() {}
@@ -5961,7 +5961,7 @@ func NewIdentifierContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_identifier
+	p.RuleIndex = SMTCParserRULE_identifier
 
 	return p
 }
@@ -5985,11 +5985,11 @@ func (s *IdentifierContext) Symbol() ISymbolContext {
 }
 
 func (s *IdentifierContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *IdentifierContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *IdentifierContext) AllIndex() []IIndexContext {
@@ -6042,20 +6042,20 @@ func (s *IdentifierContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 }
 
 func (s *IdentifierContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterIdentifier(s)
 	}
 }
 
 func (s *IdentifierContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitIdentifier(s)
 	}
 }
 
-func (p *SMTXParser) Identifier() (localctx IIdentifierContext) {
+func (p *SMTCParser) Identifier() (localctx IIdentifierContext) {
 	localctx = NewIdentifierContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, SMTXParserRULE_identifier)
+	p.EnterRule(localctx, 36, SMTCParserRULE_identifier)
 	var _la int
 
 	p.SetState(480)
@@ -6065,18 +6065,18 @@ func (p *SMTXParser) Identifier() (localctx IIdentifierContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(469)
 			p.Symbol()
 		}
 
-	case SMTXParserPAROPEN:
+	case SMTCParserPAROPEN:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(470)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6084,7 +6084,7 @@ func (p *SMTXParser) Identifier() (localctx IIdentifierContext) {
 		}
 		{
 			p.SetState(471)
-			p.Match(SMTXParserT__40)
+			p.Match(SMTCParserT__40)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6116,7 +6116,7 @@ func (p *SMTXParser) Identifier() (localctx IIdentifierContext) {
 		}
 		{
 			p.SetState(478)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6164,13 +6164,13 @@ type IndexContext struct {
 func NewEmptyIndexContext() *IndexContext {
 	var p = new(IndexContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_index
+	p.RuleIndex = SMTCParserRULE_index
 	return p
 }
 
 func InitEmptyIndexContext(p *IndexContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_index
+	p.RuleIndex = SMTCParserRULE_index
 }
 
 func (*IndexContext) IsIndexContext() {}
@@ -6181,7 +6181,7 @@ func NewIndexContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_index
+	p.RuleIndex = SMTCParserRULE_index
 
 	return p
 }
@@ -6189,7 +6189,7 @@ func NewIndexContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 func (s *IndexContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *IndexContext) NUMERAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserNUMERAL, 0)
+	return s.GetToken(SMTCParserNUMERAL, 0)
 }
 
 func (s *IndexContext) Symbol() ISymbolContext {
@@ -6217,20 +6217,20 @@ func (s *IndexContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 }
 
 func (s *IndexContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterIndex(s)
 	}
 }
 
 func (s *IndexContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitIndex(s)
 	}
 }
 
-func (p *SMTXParser) Index() (localctx IIndexContext) {
+func (p *SMTCParser) Index() (localctx IIndexContext) {
 	localctx = NewIndexContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, SMTXParserRULE_index)
+	p.EnterRule(localctx, 38, SMTCParserRULE_index)
 	p.SetState(484)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
@@ -6238,18 +6238,18 @@ func (p *SMTXParser) Index() (localctx IIndexContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserNUMERAL:
+	case SMTCParserNUMERAL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(482)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(483)
@@ -6301,13 +6301,13 @@ type Attribute_valueContext struct {
 func NewEmptyAttribute_valueContext() *Attribute_valueContext {
 	var p = new(Attribute_valueContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_attribute_value
+	p.RuleIndex = SMTCParserRULE_attribute_value
 	return p
 }
 
 func InitEmptyAttribute_valueContext(p *Attribute_valueContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_attribute_value
+	p.RuleIndex = SMTCParserRULE_attribute_value
 }
 
 func (*Attribute_valueContext) IsAttribute_valueContext() {}
@@ -6318,7 +6318,7 @@ func NewAttribute_valueContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_attribute_value
+	p.RuleIndex = SMTCParserRULE_attribute_value
 
 	return p
 }
@@ -6358,11 +6358,11 @@ func (s *Attribute_valueContext) Symbol() ISymbolContext {
 }
 
 func (s *Attribute_valueContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *Attribute_valueContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *Attribute_valueContext) AllS_expr() []IS_exprContext {
@@ -6415,20 +6415,20 @@ func (s *Attribute_valueContext) ToStringTree(ruleNames []string, recog antlr.Re
 }
 
 func (s *Attribute_valueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterAttribute_value(s)
 	}
 }
 
 func (s *Attribute_valueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitAttribute_value(s)
 	}
 }
 
-func (p *SMTXParser) Attribute_value() (localctx IAttribute_valueContext) {
+func (p *SMTCParser) Attribute_value() (localctx IAttribute_valueContext) {
 	localctx = NewAttribute_valueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, SMTXParserRULE_attribute_value)
+	p.EnterRule(localctx, 40, SMTCParserRULE_attribute_value)
 	var _la int
 
 	p.SetState(496)
@@ -6438,25 +6438,25 @@ func (p *SMTXParser) Attribute_value() (localctx IAttribute_valueContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserNUMERAL, SMTXParserDECIMAL, SMTXParserHEXADECIMAL, SMTXParserBINARY, SMTXParserSTRING:
+	case SMTCParserNUMERAL, SMTCParserDECIMAL, SMTCParserHEXADECIMAL, SMTCParserBINARY, SMTCParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(486)
 			p.Spec_constant()
 		}
 
-	case SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(487)
 			p.Symbol()
 		}
 
-	case SMTXParserPAROPEN:
+	case SMTCParserPAROPEN:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(488)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6484,7 +6484,7 @@ func (p *SMTXParser) Attribute_value() (localctx IAttribute_valueContext) {
 		}
 		{
 			p.SetState(495)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6532,13 +6532,13 @@ type AttributeContext struct {
 func NewEmptyAttributeContext() *AttributeContext {
 	var p = new(AttributeContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_attribute
+	p.RuleIndex = SMTCParserRULE_attribute
 	return p
 }
 
 func InitEmptyAttributeContext(p *AttributeContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_attribute
+	p.RuleIndex = SMTCParserRULE_attribute
 }
 
 func (*AttributeContext) IsAttributeContext() {}
@@ -6549,7 +6549,7 @@ func NewAttributeContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_attribute
+	p.RuleIndex = SMTCParserRULE_attribute
 
 	return p
 }
@@ -6557,7 +6557,7 @@ func NewAttributeContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *AttributeContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *AttributeContext) KEYWORD() antlr.TerminalNode {
-	return s.GetToken(SMTXParserKEYWORD, 0)
+	return s.GetToken(SMTCParserKEYWORD, 0)
 }
 
 func (s *AttributeContext) Attribute_value() IAttribute_valueContext {
@@ -6585,20 +6585,20 @@ func (s *AttributeContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *AttributeContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterAttribute(s)
 	}
 }
 
 func (s *AttributeContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitAttribute(s)
 	}
 }
 
-func (p *SMTXParser) Attribute() (localctx IAttributeContext) {
+func (p *SMTCParser) Attribute() (localctx IAttributeContext) {
 	localctx = NewAttributeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, SMTXParserRULE_attribute)
+	p.EnterRule(localctx, 42, SMTCParserRULE_attribute)
 	p.SetState(501)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
@@ -6610,7 +6610,7 @@ func (p *SMTXParser) Attribute() (localctx IAttributeContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(498)
-			p.Match(SMTXParserKEYWORD)
+			p.Match(SMTCParserKEYWORD)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6621,7 +6621,7 @@ func (p *SMTXParser) Attribute() (localctx IAttributeContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(499)
-			p.Match(SMTXParserKEYWORD)
+			p.Match(SMTCParserKEYWORD)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6678,13 +6678,13 @@ type Info_flagContext struct {
 func NewEmptyInfo_flagContext() *Info_flagContext {
 	var p = new(Info_flagContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_info_flag
+	p.RuleIndex = SMTCParserRULE_info_flag
 	return p
 }
 
 func InitEmptyInfo_flagContext(p *Info_flagContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_info_flag
+	p.RuleIndex = SMTCParserRULE_info_flag
 }
 
 func (*Info_flagContext) IsInfo_flagContext() {}
@@ -6695,7 +6695,7 @@ func NewInfo_flagContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_info_flag
+	p.RuleIndex = SMTCParserRULE_info_flag
 
 	return p
 }
@@ -6703,35 +6703,35 @@ func NewInfo_flagContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *Info_flagContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Info_flagContext) PK_ALL_STATISTICS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_ALL_STATISTICS, 0)
+	return s.GetToken(SMTCParserPK_ALL_STATISTICS, 0)
 }
 
 func (s *Info_flagContext) PK_ASSERTION_STACK_LEVELS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_ASSERTION_STACK_LEVELS, 0)
+	return s.GetToken(SMTCParserPK_ASSERTION_STACK_LEVELS, 0)
 }
 
 func (s *Info_flagContext) PK_AUTHORS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_AUTHORS, 0)
+	return s.GetToken(SMTCParserPK_AUTHORS, 0)
 }
 
 func (s *Info_flagContext) PK_ERROR_BEHAVIOR() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_ERROR_BEHAVIOR, 0)
+	return s.GetToken(SMTCParserPK_ERROR_BEHAVIOR, 0)
 }
 
 func (s *Info_flagContext) PK_NAME() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_NAME, 0)
+	return s.GetToken(SMTCParserPK_NAME, 0)
 }
 
 func (s *Info_flagContext) PK_REASON_UNKNOWN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_REASON_UNKNOWN, 0)
+	return s.GetToken(SMTCParserPK_REASON_UNKNOWN, 0)
 }
 
 func (s *Info_flagContext) PK_VERSION() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_VERSION, 0)
+	return s.GetToken(SMTCParserPK_VERSION, 0)
 }
 
 func (s *Info_flagContext) KEYWORD() antlr.TerminalNode {
-	return s.GetToken(SMTXParserKEYWORD, 0)
+	return s.GetToken(SMTCParserKEYWORD, 0)
 }
 
 func (s *Info_flagContext) GetRuleContext() antlr.RuleContext {
@@ -6743,20 +6743,20 @@ func (s *Info_flagContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 }
 
 func (s *Info_flagContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterInfo_flag(s)
 	}
 }
 
 func (s *Info_flagContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitInfo_flag(s)
 	}
 }
 
-func (p *SMTXParser) Info_flag() (localctx IInfo_flagContext) {
+func (p *SMTCParser) Info_flag() (localctx IInfo_flagContext) {
 	localctx = NewInfo_flagContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, SMTXParserRULE_info_flag)
+	p.EnterRule(localctx, 44, SMTCParserRULE_info_flag)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -6823,13 +6823,13 @@ type OptionContext struct {
 func NewEmptyOptionContext() *OptionContext {
 	var p = new(OptionContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_option
+	p.RuleIndex = SMTCParserRULE_option
 	return p
 }
 
 func InitEmptyOptionContext(p *OptionContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_option
+	p.RuleIndex = SMTCParserRULE_option
 }
 
 func (*OptionContext) IsOptionContext() {}
@@ -6840,7 +6840,7 @@ func NewOptionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_option
+	p.RuleIndex = SMTCParserRULE_option
 
 	return p
 }
@@ -6848,15 +6848,15 @@ func NewOptionContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 func (s *OptionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *OptionContext) PK_DIAGNOSTIC_OUTPUT_CHANNEL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_DIAGNOSTIC_OUTPUT_CHANNEL, 0)
+	return s.GetToken(SMTCParserPK_DIAGNOSTIC_OUTPUT_CHANNEL, 0)
 }
 
 func (s *OptionContext) STRING() antlr.TerminalNode {
-	return s.GetToken(SMTXParserSTRING, 0)
+	return s.GetToken(SMTCParserSTRING, 0)
 }
 
 func (s *OptionContext) PK_GLOBAL_DECLARATIONS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_GLOBAL_DECLARATIONS, 0)
+	return s.GetToken(SMTCParserPK_GLOBAL_DECLARATIONS, 0)
 }
 
 func (s *OptionContext) B_value() IB_valueContext {
@@ -6876,51 +6876,51 @@ func (s *OptionContext) B_value() IB_valueContext {
 }
 
 func (s *OptionContext) PK_INTERACTIVE_MODE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_INTERACTIVE_MODE, 0)
+	return s.GetToken(SMTCParserPK_INTERACTIVE_MODE, 0)
 }
 
 func (s *OptionContext) PK_PRINT_SUCCESS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRINT_SUCCESS, 0)
+	return s.GetToken(SMTCParserPK_PRINT_SUCCESS, 0)
 }
 
 func (s *OptionContext) PK_PRODUCE_ASSIGNMENTS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRODUCE_ASSIGNMENTS, 0)
+	return s.GetToken(SMTCParserPK_PRODUCE_ASSIGNMENTS, 0)
 }
 
 func (s *OptionContext) PK_PRODUCE_MODELS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRODUCE_MODELS, 0)
+	return s.GetToken(SMTCParserPK_PRODUCE_MODELS, 0)
 }
 
 func (s *OptionContext) PK_PRODUCE_PROOFS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRODUCE_PROOFS, 0)
+	return s.GetToken(SMTCParserPK_PRODUCE_PROOFS, 0)
 }
 
 func (s *OptionContext) PK_PRODUCE_UNSAT_ASSUMPTIONS() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRODUCE_UNSAT_ASSUMPTIONS, 0)
+	return s.GetToken(SMTCParserPK_PRODUCE_UNSAT_ASSUMPTIONS, 0)
 }
 
 func (s *OptionContext) PK_PRODUCE_UNSAT_CORES() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_PRODUCE_UNSAT_CORES, 0)
+	return s.GetToken(SMTCParserPK_PRODUCE_UNSAT_CORES, 0)
 }
 
 func (s *OptionContext) PK_RANDOM_SEED() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_RANDOM_SEED, 0)
+	return s.GetToken(SMTCParserPK_RANDOM_SEED, 0)
 }
 
 func (s *OptionContext) NUMERAL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserNUMERAL, 0)
+	return s.GetToken(SMTCParserNUMERAL, 0)
 }
 
 func (s *OptionContext) PK_REGULAR_OUTPUT_CHANNEL() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_REGULAR_OUTPUT_CHANNEL, 0)
+	return s.GetToken(SMTCParserPK_REGULAR_OUTPUT_CHANNEL, 0)
 }
 
 func (s *OptionContext) PK_REPRODUCIBLE_RESOURCE_LIMIT() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_REPRODUCIBLE_RESOURCE_LIMIT, 0)
+	return s.GetToken(SMTCParserPK_REPRODUCIBLE_RESOURCE_LIMIT, 0)
 }
 
 func (s *OptionContext) PK_VERBOSITY() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPK_VERBOSITY, 0)
+	return s.GetToken(SMTCParserPK_VERBOSITY, 0)
 }
 
 func (s *OptionContext) Attribute() IAttributeContext {
@@ -6948,20 +6948,20 @@ func (s *OptionContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 }
 
 func (s *OptionContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterOption(s)
 	}
 }
 
 func (s *OptionContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitOption(s)
 	}
 }
 
-func (p *SMTXParser) Option() (localctx IOptionContext) {
+func (p *SMTCParser) Option() (localctx IOptionContext) {
 	localctx = NewOptionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, SMTXParserRULE_option)
+	p.EnterRule(localctx, 46, SMTCParserRULE_option)
 	p.SetState(534)
 	p.GetErrorHandler().Sync(p)
 	if p.HasError() {
@@ -6969,11 +6969,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserPK_DIAGNOSTIC_OUTPUT_CHANNEL:
+	case SMTCParserPK_DIAGNOSTIC_OUTPUT_CHANNEL:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(505)
-			p.Match(SMTXParserPK_DIAGNOSTIC_OUTPUT_CHANNEL)
+			p.Match(SMTCParserPK_DIAGNOSTIC_OUTPUT_CHANNEL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -6981,18 +6981,18 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 		}
 		{
 			p.SetState(506)
-			p.Match(SMTXParserSTRING)
+			p.Match(SMTCParserSTRING)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserPK_GLOBAL_DECLARATIONS:
+	case SMTCParserPK_GLOBAL_DECLARATIONS:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(507)
-			p.Match(SMTXParserPK_GLOBAL_DECLARATIONS)
+			p.Match(SMTCParserPK_GLOBAL_DECLARATIONS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7003,11 +7003,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_INTERACTIVE_MODE:
+	case SMTCParserPK_INTERACTIVE_MODE:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(509)
-			p.Match(SMTXParserPK_INTERACTIVE_MODE)
+			p.Match(SMTCParserPK_INTERACTIVE_MODE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7018,11 +7018,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRINT_SUCCESS:
+	case SMTCParserPK_PRINT_SUCCESS:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(511)
-			p.Match(SMTXParserPK_PRINT_SUCCESS)
+			p.Match(SMTCParserPK_PRINT_SUCCESS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7033,11 +7033,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserT__41:
+	case SMTCParserT__41:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(513)
-			p.Match(SMTXParserT__41)
+			p.Match(SMTCParserT__41)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7048,11 +7048,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRODUCE_ASSIGNMENTS:
+	case SMTCParserPK_PRODUCE_ASSIGNMENTS:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(515)
-			p.Match(SMTXParserPK_PRODUCE_ASSIGNMENTS)
+			p.Match(SMTCParserPK_PRODUCE_ASSIGNMENTS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7063,11 +7063,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRODUCE_MODELS:
+	case SMTCParserPK_PRODUCE_MODELS:
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(517)
-			p.Match(SMTXParserPK_PRODUCE_MODELS)
+			p.Match(SMTCParserPK_PRODUCE_MODELS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7078,11 +7078,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRODUCE_PROOFS:
+	case SMTCParserPK_PRODUCE_PROOFS:
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(519)
-			p.Match(SMTXParserPK_PRODUCE_PROOFS)
+			p.Match(SMTCParserPK_PRODUCE_PROOFS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7093,11 +7093,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRODUCE_UNSAT_ASSUMPTIONS:
+	case SMTCParserPK_PRODUCE_UNSAT_ASSUMPTIONS:
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(521)
-			p.Match(SMTXParserPK_PRODUCE_UNSAT_ASSUMPTIONS)
+			p.Match(SMTCParserPK_PRODUCE_UNSAT_ASSUMPTIONS)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7108,11 +7108,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_PRODUCE_UNSAT_CORES:
+	case SMTCParserPK_PRODUCE_UNSAT_CORES:
 		p.EnterOuterAlt(localctx, 10)
 		{
 			p.SetState(523)
-			p.Match(SMTXParserPK_PRODUCE_UNSAT_CORES)
+			p.Match(SMTCParserPK_PRODUCE_UNSAT_CORES)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7123,11 +7123,11 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 			p.B_value()
 		}
 
-	case SMTXParserPK_RANDOM_SEED:
+	case SMTCParserPK_RANDOM_SEED:
 		p.EnterOuterAlt(localctx, 11)
 		{
 			p.SetState(525)
-			p.Match(SMTXParserPK_RANDOM_SEED)
+			p.Match(SMTCParserPK_RANDOM_SEED)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7135,18 +7135,18 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 		}
 		{
 			p.SetState(526)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserPK_REGULAR_OUTPUT_CHANNEL:
+	case SMTCParserPK_REGULAR_OUTPUT_CHANNEL:
 		p.EnterOuterAlt(localctx, 12)
 		{
 			p.SetState(527)
-			p.Match(SMTXParserPK_REGULAR_OUTPUT_CHANNEL)
+			p.Match(SMTCParserPK_REGULAR_OUTPUT_CHANNEL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7154,18 +7154,18 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 		}
 		{
 			p.SetState(528)
-			p.Match(SMTXParserSTRING)
+			p.Match(SMTCParserSTRING)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserPK_REPRODUCIBLE_RESOURCE_LIMIT:
+	case SMTCParserPK_REPRODUCIBLE_RESOURCE_LIMIT:
 		p.EnterOuterAlt(localctx, 13)
 		{
 			p.SetState(529)
-			p.Match(SMTXParserPK_REPRODUCIBLE_RESOURCE_LIMIT)
+			p.Match(SMTCParserPK_REPRODUCIBLE_RESOURCE_LIMIT)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7173,18 +7173,18 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 		}
 		{
 			p.SetState(530)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserPK_VERBOSITY:
+	case SMTCParserPK_VERBOSITY:
 		p.EnterOuterAlt(localctx, 14)
 		{
 			p.SetState(531)
-			p.Match(SMTXParserPK_VERBOSITY)
+			p.Match(SMTCParserPK_VERBOSITY)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7192,14 +7192,14 @@ func (p *SMTXParser) Option() (localctx IOptionContext) {
 		}
 		{
 			p.SetState(532)
-			p.Match(SMTXParserNUMERAL)
+			p.Match(SMTCParserNUMERAL)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserKEYWORD:
+	case SMTCParserKEYWORD:
 		p.EnterOuterAlt(localctx, 15)
 		{
 			p.SetState(533)
@@ -7247,13 +7247,13 @@ type B_valueContext struct {
 func NewEmptyB_valueContext() *B_valueContext {
 	var p = new(B_valueContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_b_value
+	p.RuleIndex = SMTCParserRULE_b_value
 	return p
 }
 
 func InitEmptyB_valueContext(p *B_valueContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_b_value
+	p.RuleIndex = SMTCParserRULE_b_value
 }
 
 func (*B_valueContext) IsB_valueContext() {}
@@ -7264,7 +7264,7 @@ func NewB_valueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_b_value
+	p.RuleIndex = SMTCParserRULE_b_value
 
 	return p
 }
@@ -7272,11 +7272,11 @@ func NewB_valueContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *B_valueContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *B_valueContext) PS_TRUE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPS_TRUE, 0)
+	return s.GetToken(SMTCParserPS_TRUE, 0)
 }
 
 func (s *B_valueContext) PS_FALSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPS_FALSE, 0)
+	return s.GetToken(SMTCParserPS_FALSE, 0)
 }
 
 func (s *B_valueContext) GetRuleContext() antlr.RuleContext {
@@ -7288,20 +7288,20 @@ func (s *B_valueContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 }
 
 func (s *B_valueContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterB_value(s)
 	}
 }
 
 func (s *B_valueContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitB_value(s)
 	}
 }
 
-func (p *SMTXParser) B_value() (localctx IB_valueContext) {
+func (p *SMTCParser) B_value() (localctx IB_valueContext) {
 	localctx = NewB_valueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 48, SMTXParserRULE_b_value)
+	p.EnterRule(localctx, 48, SMTCParserRULE_b_value)
 	var _la int
 
 	p.EnterOuterAlt(localctx, 1)
@@ -7309,7 +7309,7 @@ func (p *SMTXParser) B_value() (localctx IB_valueContext) {
 		p.SetState(536)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == SMTXParserPS_FALSE || _la == SMTXParserPS_TRUE) {
+		if !(_la == SMTCParserPS_FALSE || _la == SMTCParserPS_TRUE) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -7358,13 +7358,13 @@ type S_exprContext struct {
 func NewEmptyS_exprContext() *S_exprContext {
 	var p = new(S_exprContext)
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_s_expr
+	p.RuleIndex = SMTCParserRULE_s_expr
 	return p
 }
 
 func InitEmptyS_exprContext(p *S_exprContext) {
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, nil, -1)
-	p.RuleIndex = SMTXParserRULE_s_expr
+	p.RuleIndex = SMTCParserRULE_s_expr
 }
 
 func (*S_exprContext) IsS_exprContext() {}
@@ -7375,7 +7375,7 @@ func NewS_exprContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	antlr.InitBaseParserRuleContext(&p.BaseParserRuleContext, parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = SMTXParserRULE_s_expr
+	p.RuleIndex = SMTCParserRULE_s_expr
 
 	return p
 }
@@ -7415,15 +7415,15 @@ func (s *S_exprContext) Symbol() ISymbolContext {
 }
 
 func (s *S_exprContext) KEYWORD() antlr.TerminalNode {
-	return s.GetToken(SMTXParserKEYWORD, 0)
+	return s.GetToken(SMTCParserKEYWORD, 0)
 }
 
 func (s *S_exprContext) PAROPEN() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPAROPEN, 0)
+	return s.GetToken(SMTCParserPAROPEN, 0)
 }
 
 func (s *S_exprContext) PARCLOSE() antlr.TerminalNode {
-	return s.GetToken(SMTXParserPARCLOSE, 0)
+	return s.GetToken(SMTCParserPARCLOSE, 0)
 }
 
 func (s *S_exprContext) AllS_expr() []IS_exprContext {
@@ -7476,20 +7476,20 @@ func (s *S_exprContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 }
 
 func (s *S_exprContext) EnterRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.EnterS_expr(s)
 	}
 }
 
 func (s *S_exprContext) ExitRule(listener antlr.ParseTreeListener) {
-	if listenerT, ok := listener.(SMTXListener); ok {
+	if listenerT, ok := listener.(SMTCListener); ok {
 		listenerT.ExitS_expr(s)
 	}
 }
 
-func (p *SMTXParser) S_expr() (localctx IS_exprContext) {
+func (p *SMTCParser) S_expr() (localctx IS_exprContext) {
 	localctx = NewS_exprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 50, SMTXParserRULE_s_expr)
+	p.EnterRule(localctx, 50, SMTCParserRULE_s_expr)
 	var _la int
 
 	p.SetState(549)
@@ -7499,36 +7499,36 @@ func (p *SMTXParser) S_expr() (localctx IS_exprContext) {
 	}
 
 	switch p.GetTokenStream().LA(1) {
-	case SMTXParserNUMERAL, SMTXParserDECIMAL, SMTXParserHEXADECIMAL, SMTXParserBINARY, SMTXParserSTRING:
+	case SMTCParserNUMERAL, SMTCParserDECIMAL, SMTCParserHEXADECIMAL, SMTCParserBINARY, SMTCParserSTRING:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(538)
 			p.Spec_constant()
 		}
 
-	case SMTXParserSIMPLE_SYMBOL, SMTXParserQUOTED_SYMBOL:
+	case SMTCParserSIMPLE_SYMBOL, SMTCParserQUOTED_SYMBOL:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(539)
 			p.Symbol()
 		}
 
-	case SMTXParserKEYWORD:
+	case SMTCParserKEYWORD:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(540)
-			p.Match(SMTXParserKEYWORD)
+			p.Match(SMTCParserKEYWORD)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
 			}
 		}
 
-	case SMTXParserPAROPEN:
+	case SMTCParserPAROPEN:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(541)
-			p.Match(SMTXParserPAROPEN)
+			p.Match(SMTCParserPAROPEN)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit
@@ -7556,7 +7556,7 @@ func (p *SMTXParser) S_expr() (localctx IS_exprContext) {
 		}
 		{
 			p.SetState(548)
-			p.Match(SMTXParserPARCLOSE)
+			p.Match(SMTCParserPARCLOSE)
 			if p.HasError() {
 				// Recognition error - abort rule
 				goto errorExit

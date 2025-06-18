@@ -5,8 +5,8 @@ import (
 	"go/token"
 	"go/types"
 
-	"github.com/smtx/ast"
-	"github.com/smtx/config"
+	"github.com/smtc/ast"
+	"github.com/smtc/config"
 )
 
 func CheckSourceFile(fset *token.FileSet, sf *ast.SourceFile) (*types.Package, error) {

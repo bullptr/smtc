@@ -1,4 +1,4 @@
-module github.com/smtx
+module github.com/smtc
 
 go 1.24.1
 

@@ -3,7 +3,7 @@ package ast
 import (
 	"go/ast"
 
-	"github.com/smtx/parser"
+	"github.com/smtc/parser"
 )
 
 type SourceFile struct {

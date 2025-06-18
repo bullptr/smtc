@@ -8,11 +8,11 @@ import (
 
 	gast "go/ast"
 
-	"github.com/smtx/ast"
-	"github.com/smtx/config"
-	"github.com/smtx/parser"
-	"github.com/smtx/types"
-	"github.com/smtx/utils"
+	"github.com/smtc/ast"
+	"github.com/smtc/config"
+	"github.com/smtc/parser"
+	"github.com/smtc/types"
+	"github.com/smtc/utils"
 )
 
 type Config struct {

@@ -5,8 +5,8 @@ import (
 
 	arg "github.com/alexflint/go-arg"
 
-	"github.com/smtx/compiler"
-	"github.com/smtx/config"
+	"github.com/smtc/compiler"
+	"github.com/smtc/config"
 )
 
 var args config.CmdArgs

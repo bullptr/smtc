@@ -2,7 +2,7 @@ package benchmarks
 
 import (
 	"testing"
-	// ap "github.com/smtx/smtx_parser"
+	// ap "github.com/smtc/smtc_parser"
 )
 
 // func BenchmarkTypeChecking(b *testing.B) {

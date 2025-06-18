@@ -6,8 +6,8 @@ import (
 
 	ts "github.com/tree-sitter/go-tree-sitter"
 
-	"github.com/smtx/ast"
-	"github.com/smtx/utils"
+	"github.com/smtc/ast"
+	"github.com/smtc/utils"
 )
 
 // @TODO: use: https://pkg.go.dev/golang.org/x/tools/go/ast/astutil

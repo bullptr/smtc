@@ -1,12 +1,12 @@
-# SMTX: A Robust SMT-LIB Static Validator
+# SMTC: A Robust SMT-LIB Static Validator
 
-The Satisfiability Modulo Theories Type-checker (SMTX) is a specialized type checker built on Golang’s type system that performs precise and efficient validation of SMT-LIB2 logical formulas.
+The Satisfiability Modulo Theories Type-checker (SMTC) is a specialized type checker built on Golang’s type system that performs precise and efficient validation of SMT-LIB2 logical formulas.
 
-SMTX is part of a larger project, SMTX, that focuses on improving SMT solving using static analysis and _pre-solver_ tools.
+SMTC is part of a larger project, SMTC, that focuses on improving SMT solving using static analysis and _pre-solver_ tools.
 
 ## Implementation
 
-SMTX is implemented in Go, leveraging its strong type system and efficient compilation. The implementation focuses on:
+SMTC is implemented in Go, leveraging its strong type system and efficient compilation. The implementation focuses on:
 
 - Type-safe validation of SMT-LIB2 (v2.6) expressions
 - Efficient memory management using Go's garbage collection
@@ -23,10 +23,8 @@ The core architecture consists of:
 
 ## Publications
 
-### @TODO [SMT-LIB as a Type Definition Language: A Self-Extensible Type Checking Framework](#)
+### [SMT-LIB as a Type Definition Language: A Self-Extensible Type Checking Framework](#)
 
 **Abstract:**
 
-This paper presents a novel approach to SMT-LIB type checking by leveraging SMT-LIB itself as a definition language. Our framework implements a standalone type checker that operates independently of any SMT solver, enabling early error detection and improved development workflow. Built on the formal grammar specification of SMT-LIB v2.7, it validates SMT formulas and interprets SMT-LIB specifications as type definition files, facilitating dynamic type system extension while maintaining strict standard compliance.
-
-The type checker's architecture emphasizes performance through optimized parsing and validation algorithms, providing concise yet precise error reporting. By avoiding verbose output in favor of targeted diagnostic messages, it maintains exceptional processing speed even with complex SMT formulas. Our self-contained system, which uses SMT-LIB as both input language and type definition format, supports seamless extensibility while preserving implementation integrity. [[read more...]](#)
+SMT solvers serve as essential tools for analyzing constraints in practical applications such as program synthesis and symbolic execution. Proper SMT validation through type checking helps ensure the correctness and reliability of these analysis tools. Existing approaches typically embed type validation rules within specific solvers or tools, which requires nontrivial development efforts. We present a novel framework that leverages SMT-LIB itself as a type definition language. Our approach reformulates the traditional model of SMT type validation by treating SMT-LIB specifications as type definition files, enabling a flexible and maintainable type validation system. We demonstrate this through SMT Compiler (SMTC), a standalone preprocessor that combines concurrent processing with Go's type system. SMTC validates formulas against the SMT-LIB v2.7 formal grammar specification and supports dynamic type system extension, offering a solver-agnostic solution that enhances both correctness and development workflow. As a result, this would allow SMT solver developers to seamlessly validate new theories and logics while maintaining separation from core solving operations. [[read more...]](#)

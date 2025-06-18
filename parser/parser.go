@@ -10,8 +10,8 @@ import (
 
 type Parser struct {
 	Src   *string
-	Lexer *SMTXLexer
-	Tree  *SMTXParser
+	Lexer *SMTCLexer
+	Tree  *SMTCParser
 }
 
 func (p *Parser) ResetLexer() {
@@ -21,9 +21,9 @@ func (p *Parser) ResetLexer() {
 func NewParser(fset *token.FileSet, filename string) *Parser {
 	input, _ := antlr.NewFileStream(filename)
 	src := input.String()
-	lexer := NewSMTXLexer(input)
+	lexer := NewSMTCLexer(input)
 	stream := antlr.NewCommonTokenStream(lexer, 0)
-	parser := NewSMTXParser(stream)
+	parser := NewSMTCParser(stream)
 
 	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	// stream.Fill() // necessary to for fset building

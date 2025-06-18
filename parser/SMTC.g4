@@ -1,6 +1,6 @@
 // This grammar defines the syntax for the SMT-LIB v2.7 (v2.7-r2025-04-09) language excluding the
 // heories, Logics, and Command responses rules.
-grammar SMTX;
+grammar SMTC;
 
 // Parser rules
 script: command*;

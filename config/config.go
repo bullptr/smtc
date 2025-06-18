@@ -1,6 +1,6 @@
 package config
 
-const PKGNAME = "smtx"
+const PKGNAME = "smtc"
 const VERSION = "0.1.0"
 
 // Command line arguments

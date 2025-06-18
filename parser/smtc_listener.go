@@ -1,10 +1,10 @@
-// Code generated from /home/baeyun/smtc/parser/SMTX.g4 by ANTLR 4.13.1. DO NOT EDIT.
+// Code generated from /home/baeyun/smtc/parser/SMTC.g4 by ANTLR 4.13.1. DO NOT EDIT.
 
-package parser // SMTX
+package parser // SMTC
 import "github.com/antlr4-go/antlr/v4"
 
-// SMTXListener is a complete listener for a parse tree produced by SMTXParser.
-type SMTXListener interface {
+// SMTCListener is a complete listener for a parse tree produced by SMTCParser.
+type SMTCListener interface {
 	antlr.ParseTreeListener
 
 	// EnterScript is called when entering the script production.

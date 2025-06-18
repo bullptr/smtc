@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/fatih/color"
-	"github.com/smtx/utils"
+	"github.com/smtc/utils"
 )
 
 // Output will look like:

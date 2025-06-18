@@ -1,8 +1,8 @@
 package QF_LIA
 
 import (
-	CoreTheory "github.com/smtx/theories/Core"
-	IntsTheory "github.com/smtx/theories/Ints"
+	CoreTheory "github.com/smtc/theories/Core"
+	IntsTheory "github.com/smtc/theories/Ints"
 )
 
 type (

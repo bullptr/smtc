@@ -7,7 +7,7 @@ import (
 	"go/printer"
 	"go/token"
 
-	"github.com/smtx/utils"
+	"github.com/smtc/utils"
 )
 
 func Generate(fset *token.FileSet, sf *SourceFile) string {
