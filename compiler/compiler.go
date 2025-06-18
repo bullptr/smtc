@@ -15,11 +15,6 @@ import (
 	"github.com/smtx/utils"
 )
 
-/**
- * @TODOs
- * - add new import logic
- */
-
 type Config struct {
 	Include []string
 	Exclude []string
@@ -96,15 +91,19 @@ func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
 }
 
 func (c *Compiler) CompileSourceFile(filename string) {
-	pkg := ast.Ident{
-		Name: "main",
-	}
+	pkg := ast.Ident{Name: "main"}
+	p := parser.NewParser(c.Fset, filename)
 	sf := &ast.SourceFile{
 		Filename: filename,
-		Parser:   parser.NewParser(c.Fset, filename),
+		Parser:   p,
 		Ast: &ast.File{
-			Name:  &pkg,
-			Scope: gast.NewScope(nil),
+			Name:      &pkg,
+			Scope:     gast.NewScope(nil),
+			FileStart: token.Pos(0),
+			FileEnd:   token.Pos(len(*p.Src)),
+			GoVersion: "1.20",
+			// @TODO: build and import prelude library
+			// Imports:   c.LoadPrelude(),
 		},
 	}
 
@@ -114,8 +113,8 @@ func (c *Compiler) CompileSourceFile(filename string) {
 	// sf.Ast.Decls = append(sf.Ast.Decls, topLevelDelcs...)
 	sf.Ast.Decls = append(sf.Ast.Decls, mainFunc)
 
-	// ast.PrintAst(sf.Ast)
-	// ast.PrintSourceFile(sf)
+	ast.PrintSourceFile(c.Fset, sf)
+	ast.PrintAst(c.Fset, sf.Ast)
 	sf.Parser.ResetLexer()
 	c.Files = append(c.Files, sf)
 	// c.CheckTypes()
@@ -135,4 +134,9 @@ func (c *Compiler) CheckTypes() {
 }
 
 // @TODO: load prelude library from logics and theories
-func (c *Compiler) LoadPrelude() {}
+func (c *Compiler) LoadPrelude() []*gast.ImportSpec {
+	return []*gast.ImportSpec{
+		// gast.NewImportSpec(nil, nil, nil, &gast.Ident{Name: "prelude"}),
+		// gast.NewImportSpec(nil, nil, nil, &gast.Ident{Name: "smtc/prelude"}),
+	}
+}

@@ -9,8 +9,8 @@ import (
 type SourceFile struct {
 	// Fset     *token.FileSet // Compiler.Fset ref
 	Filename string
-	Ast      *ast.File
 	Parser   *parser.Parser
+	Ast      *ast.File
 }
 
 type (
