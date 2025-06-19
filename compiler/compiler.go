@@ -80,7 +80,7 @@ func NewCompilerFromArgs(args config.CmdArgs) *Compiler {
 
 	// c.Fset.Iterate(func(f *token.File) bool {
 	// 	fmt.Printf("%v\n", f)
-	// 	return true // continue iterating
+	// 	return false // continue iterating
 	// })
 
 	if args.Verbose {
@@ -107,14 +107,14 @@ func (c *Compiler) CompileSourceFile(filename string) {
 		},
 	}
 
-	// cmds := BuildCommands(&sf.Src, sf.Parser.RootNode())
-	cmds := []gast.Stmt{}
+	cmds := BuildCommands(sf.Parser)
+	println("Commands:", len(cmds))
 	mainFunc := BuildMainFunction(&cmds)
 	// sf.Ast.Decls = append(sf.Ast.Decls, topLevelDelcs...)
 	sf.Ast.Decls = append(sf.Ast.Decls, mainFunc)
 
-	ast.PrintSourceFile(c.Fset, sf)
-	ast.PrintAst(c.Fset, sf.Ast)
+	// ast.PrintSourceFile(c.Fset, sf)
+	// ast.PrintAst(c.Fset, sf.Ast)
 	sf.Parser.ResetLexer()
 	c.Files = append(c.Files, sf)
 	// c.CheckTypes()

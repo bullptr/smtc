@@ -27,7 +27,7 @@ func NewParser(fset *token.FileSet, filename string) *Parser {
 
 	parser.AddErrorListener(antlr.NewDiagnosticErrorListener(true))
 	// stream.Fill() // necessary to for fset building
-	NewFileSet(fset, filename, []byte(src))
+	BuildFileSet(fset, filename, []byte(src))
 
 	return &Parser{
 		Src:   &src,
@@ -36,7 +36,7 @@ func NewParser(fset *token.FileSet, filename string) *Parser {
 	}
 }
 
-func NewFileSet(fset *token.FileSet, filename string, content []byte) {
+func BuildFileSet(fset *token.FileSet, filename string, content []byte) {
 	file := fset.AddFile(filename, -1, len(content))
 
 	file.SetLinesForContent(content)

@@ -1,7 +1,6 @@
 package compiler
 
 import (
-	"fmt"
 	"go/token"
 
 	ts "github.com/tree-sitter/go-tree-sitter"
@@ -98,36 +97,36 @@ func BuildMainFunction(stmts *[]ast.Stmt) *ast.FuncDecl {
 	}
 }
 
-func BuildCommands(src *[]byte, root *ts.Node) []ast.Stmt {
-	var stmts []ast.Stmt
-	cursor := root.Walk()
+// func BuildCommands(src *[]byte, root *ts.Node) []ast.Stmt {
+// 	var stmts []ast.Stmt
+// 	cursor := root.Walk()
 
-	defer cursor.Close()
+// 	defer cursor.Close()
 
-	for _, node := range root.Children(cursor) {
-		// println(parser.GetSrcByRange(*src, node.NamedChild(0)))
-		if namedChild := node.NamedChild(0); namedChild != nil {
-			switch namedChild.Kind() {
-			case "symbol":
-				// stmts = append(stmts, BuildCallExpr(&node))
-				// println(namedChild.Kind())
-			case "term":
-				// println(namedChild.NamedChild(0).Kind())
-				// println(parser.GetSrcByRange(*src, namedChild))
-				// println(parser.GetSrcByRange(*src, namedChild.Child(0)))
-				// println(parser.GetSrcByRange(*src, namedChild.NamedChild(0)))
-				// stmts = append(stmts, BuildCallExpr(&node))
-			default:
-				fmt.Printf("Unknown node: %s\n", namedChild.Kind())
-			}
-		} else {
-			// @TODO: test: unnamed, probably a call expression
-			stmts = append(stmts, BuildCallExpr(&node))
-		}
-	}
+// 	for _, node := range root.Children(cursor) {
+// 		// println(parser.GetSrcByRange(*src, node.NamedChild(0)))
+// 		if namedChild := node.NamedChild(0); namedChild != nil {
+// 			switch namedChild.Kind() {
+// 			case "symbol":
+// 				// stmts = append(stmts, BuildCallExpr(&node))
+// 				// println(namedChild.Kind())
+// 			case "term":
+// 				// println(namedChild.NamedChild(0).Kind())
+// 				// println(parser.GetSrcByRange(*src, namedChild))
+// 				// println(parser.GetSrcByRange(*src, namedChild.Child(0)))
+// 				// println(parser.GetSrcByRange(*src, namedChild.NamedChild(0)))
+// 				// stmts = append(stmts, BuildCallExpr(&node))
+// 			default:
+// 				fmt.Printf("Unknown node: %s\n", namedChild.Kind())
+// 			}
+// 		} else {
+// 			// @TODO: test: unnamed, probably a call expression
+// 			stmts = append(stmts, BuildCallExpr(&node))
+// 		}
+// 	}
 
-	return stmts
-}
+// 	return stmts
+// }
 
 func BuildCallExpr(node *ts.Node) ast.Stmt {
 	funcExprName := utils.ToPascalCase(node.Child(1).Kind())
